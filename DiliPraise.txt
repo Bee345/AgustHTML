@@ -1,0 +1,375 @@
+
+CSS Selectors, Properties, and Values
+🔹 1. What are CSS Selectors?
+
+A selector in CSS is what you use to target (select) HTML elements that you want to style.
+
+Common Selectors:
+
+Universal Selector (*) → selects all elements.
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+Type Selector (element) → selects elements by their tag name.
+
+p {
+  color: blue;
+}
+
+
+Class Selector (.classname) → selects elements with a given class.
+
+.highlight {
+  background: yellow;
+}
+
+
+ID Selector (#id) → selects element with a specific ID.
+
+#main {
+  width: 100%;
+}
+
+
+Group Selector (,) → applies styles to multiple elements.
+
+h1, h2, h3 {
+  font-family: Arial, sans-serif;
+}
+
+
+Descendant Selector (A B) → selects elements inside another.
+
+div p {
+  font-size: 14px;
+}
+
+
+Child Selector (A > B) → selects direct children only.
+
+ul > li {
+  list-style: none;
+}
+
+
+Attribute Selector ([attr=value]) → selects based on attributes.
+
+input[type="text"] {
+  border: 1px solid #333;
+}
+
+
+✅ Selectors help you point to the element you want to style.
+
+🔹 2. What are CSS Properties?
+
+A property is a specific style feature you want to change about an element.
+Examples of properties:
+
+color
+
+font-size
+
+background
+
+width
+
+margin
+
+padding
+
+border
+
+Each property defines what aspect of the element you are styling.
+
+🔹 3. What are CSS Values?
+
+A value is what you assign to a property. It defines how that property behaves.
+
+Example:
+
+p {
+  color: red;        /* property = color, value = red */
+  font-size: 18px;   /* property = font-size, value = 18px */
+  background: #f0f0f0; /* property = background, value = hex code */
+}
+
+Types of Values:
+
+Keywords → red, bold, auto, block
+
+Lengths → px, em, rem, %
+
+Colors → red, #ff0000, rgb(255,0,0), hsl(0, 100%, 50%)
+
+URLs → url("image.jpg") for backgrounds.
+
+Functions → calc(), rgb(), var().
+
+🔹 4. Full CSS Rule Structure
+
+A CSS rule is made up of:
+
+Selector → tells which element(s) to target.
+
+Property → what aspect of the element to style.
+
+Value → the style applied.
+
+Example:
+h1 {
+  color: blue;       /* property = color, value = blue */
+  font-size: 24px;   /* property = font-size, value = 24px */
+  text-align: center;
+}
+
+🔹 5. Advanced Selectors Example
+/* Attribute Selector */
+a[target="_blank"] {
+  color: red;
+}
+
+/* Pseudo-class */
+button:hover {
+  background-color: green;
+}
+
+/* Pseudo-element */
+p::first-letter {
+  font-size: 200%;
+  color: purple;
+}
+
+🔹 6. Putting It All Together
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Example</title>
+  <style>
+    /* Universal Selector */
+    * {
+      font-family: Arial, sans-serif;
+    }
+
+    /* ID Selector */
+    #header {
+      background: #333;
+      color: white;
+      padding: 20px;
+    }
+
+    /* Class Selector */
+    .highlight {
+      background: yellow;
+      font-weight: bold;
+    }
+
+    /* Type Selector */
+    p {
+      color: gray;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div id="header">Welcome to CSS Basics</div>
+  <p>This is a <span class="highlight">highlighted</span> text.</p>
+</body>
+</html>
+
+✅ Summary
+
+Selectors → target HTML elements.
+
+Properties → define what aspect of the element to style.
+
+Values → set the specific style for that property.
+
+Together, they form a CSS Rule.
+
+
+
+CSS CASCADE ORDER..
+CSS Rule Cascade (Beginner → Advanced)
+🔹 1. What is the CSS Cascade?
+
+The cascade is the process the browser uses to decide which CSS rule wins when more than one rule applies to the same element.
+
+👉 The name Cascading Style Sheets comes from this behavior.
+
+Example:
+
+p {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+
+
+👉 The paragraph will be red because the second rule comes later and wins.
+
+🔹 2. The Cascade Depends On Three Main Factors
+
+When multiple rules conflict, CSS resolves it using:
+
+Importance (!important)
+
+Specificity (how targeted a selector is)
+
+Source order (the last rule wins if all else is equal)
+
+🔹 3. Rule #1: Importance
+
+The !important flag makes a rule the highest priority.
+
+It overrides normal rules (but should be used sparingly).
+
+Example:
+
+p {
+  color: blue !important;
+}
+
+p {
+  color: red;
+}
+
+
+👉 The text will be blue because !important wins.
+
+🔹 4. Rule #2: Specificity
+
+Specificity is like a weight system for selectors. The more specific a rule is, the more power it has.
+
+Specificity Weight
+
+Inline styles → highest
+
+ID selectors (#id) → very strong
+
+Class, attribute, and pseudo-class selectors (.class, [attr], :hover) → medium strength
+
+Type selectors (div, p, h1) and pseudo-elements (::before) → weakest
+
+Example:
+p {
+  color: blue;
+}
+
+.highlight {
+  color: green;
+}
+
+#main p {
+  color: red;
+}
+
+
+👉 The result will be red because #main p (ID + type) is more specific than .highlight or p.
+
+🔹 5. Rule #3: Source Order
+
+If two rules have the same importance and specificity, the last one in the CSS file wins.
+
+Example:
+
+p {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+
+
+👉 The paragraph is red because the second rule comes last.
+
+🔹 6. Inline Styles vs Stylesheets
+
+Inline styles (written in the HTML style attribute) have higher specificity than external or internal CSS.
+
+But inline styles can still be overridden with !important.
+
+Example:
+
+<p style="color: green;">Hello</p>
+
+p {
+  color: blue !important;
+}
+
+
+👉 The paragraph will be blue, not green.
+
+🔹 7. The Full Cascade in Action
+
+Let’s combine everything:
+
+<p id="intro" class="highlight" style="color: orange;">Hello World</p>
+
+p {
+  color: blue;          /* Weakest: type selector */
+}
+
+.highlight {
+  color: green;         /* Stronger: class selector */
+}
+
+#intro {
+  color: red;           /* Strongest: ID selector */
+}
+
+p {
+  color: black !important; /* Highest priority */
+}
+
+
+👉 Final color = black
+Because !important beats everything else.
+
+🔹 8. Browser Default Styles
+
+Don’t forget: browsers have user-agent stylesheets (default styles).
+For example, <h1> is bold and large by default. Your CSS overrides these defaults.
+
+🔹 9. Cascade Layers (Advanced — CSS 2021+)
+
+A newer feature called cascade layers (@layer) gives developers more control over how rules cascade across large projects.
+
+Example:
+
+@layer reset, base, theme;
+
+@layer reset {
+  * { margin: 0; padding: 0; }
+}
+
+@layer base {
+  p { color: gray; }
+}
+
+@layer theme {
+  p { color: red; }
+}
+
+
+👉 The text will be red because the theme layer is applied after base and reset.
+
+✅ Summary
+
+The cascade decides which CSS rule wins based on:
+
+Importance → !important rules win.
+
+Specificity → inline > ID > class > type.
+
+Source order → if all else is equal, the last rule wins.
+
+👉 The cascade is why CSS is called Cascading Style Sheets — styles “fall down” and the browser picks the most powerful rule at the bottom.

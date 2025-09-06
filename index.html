@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obi Is A Boy</title>
+</head>
+<body>
+    <h3>Go to School</h3>
+    <h1> For Block elements</h1>
+
+    <div style="border: 2px ridge #45ff22;">
+        <p>Paragraph block</p>
+        <h1>Main heading</h1>
+        <div>Division block</div>
+    </div>
+    <div>
+        <p>Paragraph block</p>
+        <h1>Main heading</h1>
+        <div>Division block</div>
+    </div>
+
+    <small>Lets Go And see it all</small>
+    <span>Stop Pocarstination</span>
+    <!-- INTRODUCTION INTO HTML -->
+    <!-- HTML Introduction
+HTML is the standard markup language for creating Web pages.
+
+What is HTML?
+HTML stands for Hyper Text Markup Language
+HTML is the standard markup language for creating Web pages
+HTML describes the structure of a Web page
+HTML consists of a series of elements
+HTML elements tell the browser how to display the content
+HTML elements label pieces of content such as "this is a heading", "this is a paragraph", "this is a link", etc.
+A Simple HTML Document
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+
+
+</html>
+Example Explained
+The <!DOCTYPE html> declaration defines that this document is an HTML5 document
+The <html> element is the root element of an HTML page
+The <head> element contains meta information about the HTML page
+The <title> element specifies a title for the HTML page (which is shown in the browser's title bar or in the page's tab)
+The <body> element defines the document's body, and is a container for all the visible contents, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.
+The <h1> element defines a large heading
+The <p> element defines a paragraph
+What is an HTML Element?
+An HTML element is defined by a start tag, some content, and an end tag:
+
+<tagname> Content goes here... </tagname>
+The HTML element is everything from the start tag to the end tag:
+
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+Start tag	Element content	End tag
+<h1>	My First Heading	</h1>
+<p>	My first paragraph.	</p>
+<br>	none	none
+Note: Some HTML elements have no content (like the <br> element). These elements are called empty elements. Empty elements do not have an end tag!
+
+Web Browsers
+The purpose of a web browser (Chrome, Edge, Firefox, Safari) is to read HTML documents and display them correctly.
+
+A browser does not display the HTML tags, but uses them to determine how to display the document:
+
+View in Browser
+
+HTML Page Structure
+Below is a visualization of an HTML page structure:
+
+<html>
+<head>
+<title>Page title</title>
+</head>
+
+<h1>This is a heading</h1>
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+
+</html>
+Note: The content inside the <body> section (the white area above) will be displayed in a browser. The content inside the <title> element will be shown in the browser's title bar or in the page's tab.
+
+HTML History
+Since the early days of the World Wide Web, there have been many versions of HTML:
+
+
+. What is HTML?
+HTML stands for HyperText Markup Language.
+It is the standard language used to create and structure content on the web.
+
+HyperText → Links that connect web pages.
+
+Markup Language → A way of adding meaning and structure to text using tags.
+
+Example:
+
+html
+Copy
+Edit
+<p>This is a paragraph in HTML.</p>
+
+2. Structure of an HTML Document
+Every HTML document has a basic skeleton:
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First Page</title>
+</head>
+<body>
+  <h1>Hello World</h1>
+  <p>Welcome to HTML basics.</p>
+</body>
+</html>
+Explanation
+<!DOCTYPE html> → Declares this is an HTML5 document.
+
+<html> → Root element that wraps all content.
+
+<head> → Contains metadata (title, links to CSS, etc.).
+
+<title> → Text that appears in the browser tab.
+
+<body> → Contains the visible content.
+
+3. HTML Elements
+An HTML element consists of:
+
+Opening tag → <p>
+
+Content → Hello
+
+Closing tag → </p>
+
+Example:
+
+html
+Copy
+Edit
+<p>Hello World!</p>
+Some elements are empty/self-closing:
+
+html
+Copy
+Edit
+<img src="logo.png" alt="Logo">
+<br>
+<hr>
+4. Common HTML Tags
+Tag	Purpose	Example
+<h1> to <h6>	Headings	<h1>Main Title</h1>
+<p>	Paragraph	<p>This is text.</p>
+<a>	Link	<a href="about.html">About</a>
+<img>	Image	<img src="cat.jpg" alt="Cat">
+<ul>	Unordered list	<ul><li>Item 1</li></ul>
+<ol>	Ordered list	<ol><li>Step 1</li></ol>
+<table>	Table	<table><tr><td>Data</td></tr></table>
+<div>	Block container	<div class="box">Content</div>
+<span>	Inline container	<span style="color:red">Red</span>
+
+5. HTML Attributes
+Attributes add extra information to elements.
+Written inside the opening tag in name="value" format.
+
+
+<a href="https://google.com" target="_blank">Visit Google</a>
+href → Link destination
+
+target="_blank" → Opens in a new tab
+
+6. Nesting Elements
+Elements can be placed inside others.
+The order of opening and closing tags must match.
+
+✅ Correct:
+
+<p>This is a <strong>bold</strong> word.</p>
+❌ Wrong:
+
+html
+Copy
+Edit
+<p>This is a <strong>bold</p></strong>
+7. Comments in HTML
+Comments are ignored by the browser but useful for notes.
+
+
+ This is a comment 
+<p>This will be displayed.</p>
+
+8. Text Formatting Tags
+Tag	Effect	Example
+<b>	Bold (not semantic)	<b>Bold Text</b>
+<strong>	Bold (important)	<strong>Important</strong>
+<i>	Italic (not semantic)	<i>Italic</i>
+<em>	Emphasized (semantic)	<em>Emphasis</em>
+<u>	Underline	<u>Underline</u>
+<mark>	Highlight	<mark>Highlight</mark>
+Delete	Strikethrough	<del>Deleted</del>
+sub  Subscript	<sub>Subscript</sub>
+sup  Superscript	<sup>Superscript</sup>
+blockquote	Quote text	<blockquote>Quoted text</blockquote>
+quote	Inline quote	<q>Inline quote</q>
+
+9. Links (Hyperlinks)
+
+<a href="https://example.com">Go to Example</a>
+Attributes:
+
+href → Destination URL
+
+target="_blank" → Open in new tab
+
+rel="noopener" → Security improvement
+
+10. Images
+<img src="cat.jpg" alt="Cute Cat" width="300">
+Attributes:
+
+src → Path to image
+
+alt → Alternative text for accessibility
+
+width & height → Dimensions
+
+11. Lists
+
+A list in HTML is a collection of items (<li> elements) that are grouped inside special tags. Lists make content organized, easy to read, and structured.
+
+Unordered List:
+
+
+<ul>
+  <li>Apple</li>
+  <li>Banana</li>
+</ul>
+Ordered List:
+
+html
+Copy
+Edit
+<ol>
+  <li>Step One</li>
+  <li>Step Two</li>
+</ol>
+12. Tables
+
+A table represents structured data arranged in rows and columns.
+It’s created using the <table> element, and inside it you define:
+
+<tr> (Table Row): defines a row.
+
+<th> (Table Header): defines a header cell (bold & centered by default).
+
+<td> (Table Data): defines a normal data cell.
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td>25</td>
+  </tr>
+</table>
+<tr> → Table row
+
+<th> → Header cell
+
+<td> → Data cell
+
+13. Forms
+html
+Copy
+Edit
+<form action="submit.php" method="post">
+  <input type="text" name="username" placeholder="Username">
+  <input type="password" name="password">
+  <input type="submit" value="Login">
+</form>
+Attributes:
+
+action → Where to send the form data
+
+method → get or post
+
+14. Block vs Inline Elements
+Block elements → Start on a new line and take full width (<div>, <p>, <h1>).
+Inline elements → Stay in line with other elements (<span>, <a>, <strong>).
+
+15. Best Practices
+Use lowercase for tags and attributes.
+
+Always close tags.
+
+Indent code for readability.
+
+Use semantic tags (<header>, <nav>, <main>, <footer>) for better SEO & accessibility.
+
+✅ Example Complete HTML Page:
+
+html
+Copy
+Edit
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Basics Example</title>
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Website</h1>
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>About Me</h2>
+    <p>Hello! My name is <strong>John</strong>. I love coding and coffee.</p>
+    <img src="profile.jpg" alt="My Profile Picture" width="200">
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Website</p>
+  </footer>
+</body>
+</html>
+
+
+
+Introduction to HTML Elements
+In HTML, an element is everything from the opening tag <tag> to the closing tag </tag> (including the content in between).
+
+Example:
+
+html
+Copy
+Edit
+<p>This is a paragraph.</p>
+Here:
+
+<p> → Opening tag
+
+This is a paragraph. → Content
+
+</p> → Closing tag
+Together they make one HTML element.
+
+1. Types of HTML Elements
+a) Block-level Elements
+Start on a new line
+
+Occupy the full width available
+
+Commonly used for layout and structure
+
+Examples:
+
+
+<div>Division block</div>
+<p>Paragraph block</p>
+<h1>Main heading</h1>
+Common block elements:
+<div>, <p>, <h1>–<h6>, <section>, <header>, <footer>, <article>, <nav>
+
+b) Inline Elements
+Do not start on a new line
+
+Only take up as much width as needed
+
+Used for formatting within text
+
+Examples:
+
+html
+Copy
+Edit
+<span>Inline text</span>
+<a href="#">Link</a>
+<strong>Bold text</strong>
+Common inline elements:
+<span>, <a>, <strong>, <em>, <img>, <label>, <b>, <i>
+
+c) Empty (Void) Elements
+Have no closing tag
+
+Do not wrap content
+
+Often used for inserting media or breaks
+
+Examples:
+
+
+<img src="image.jpg" alt="Picture">
+<br>
+<hr>
+<input type="text">
+d) Nested Elements
+Placing one element inside another
+
+The inner element is a child, the outer element is the parent
+
+Example:
+
+html
+Copy
+Edit
+<p>This is a <strong>bold</strong> word.</p>
+Here, <strong> is nested inside <p>.
+
+2. Structure of an HTML Element
+A standard element has:
+
+php-template
+Copy
+Edit
+<opening-tag attribute="value">content</closing-tag>
+Example with attributes:
+
+html
+Copy
+Edit
+<a href="https://example.com" target="_blank">Visit Example</a>
+<a> → Opening tag
+
+href & target → Attributes
+
+"https://example.com" → Attribute value
+
+Visit Example → Content
+
+</a> → Closing tag
+
+3. Examples of Common HTML Elements
+Text Elements
+html
+Copy
+Edit
+<h1>Heading 1</h1>
+<p>This is a paragraph.</p>
+<em>Italic text</em>
+<strong>Bold text</strong>
+Link & Image Elements
+html
+Copy
+Edit
+<a href="https://google.com">Go to Google</a>
+<img src="cat.jpg" alt="Cute cat">
+List Elements
+html
+Copy
+Edit
+<ul>
+  <li>Apple</li>
+  <li>Banana</li>
+</ul>
+
+<ol>
+  <li>First</li>
+  <li>Second</li>
+</ol>
+
+
+Adding Audio and Video in HTML
+In modern HTML (HTML5), we can easily embed audio and video into web pages without requiring external plugins like Flash. The main tags are:
+
+<audio> → for sound/music.
+
+<video> → for movies/clips.
+
+🔹 1. Adding Audio with <audio>
+
+The <audio> element is used to embed sound.
+
+Basic Example:
+<audio src="song.mp3" controls></audio>
+
+
+src="song.mp3" → path to the audio file.
+
+controls → shows play, pause, and volume buttons.
+
+Important <audio> Attributes:
+
+controls → displays built-in player UI.
+
+<audio controls src="song.mp3"></audio>
+
+
+autoplay → starts playing automatically (⚠️ often blocked by browsers unless muted).
+
+<audio autoplay src="song.mp3"></audio>
+
+
+loop → plays audio repeatedly.
+
+<audio loop controls src="song.mp3"></audio>
+
+
+muted → starts muted by default.
+
+<audio muted autoplay src="song.mp3"></audio>
+
+
+preload → hints how browser loads audio.
+
+none → don’t preload.
+
+metadata → preload only info (duration, size).
+
+auto → preload entire file.
+
+<audio controls preload="metadata" src="song.mp3"></audio>
+
+Multiple Source Support:
+
+Different browsers support different formats (.mp3, .ogg, .wav). Use <source> for compatibility:
+
+<audio controls>
+  <source src="song.mp3" type="audio/mpeg">
+  <source src="song.ogg" type="audio/ogg">
+  <p>Your browser does not support audio.</p>
+</audio>
+
+🔹 2. Adding Video with <video>
+
+The <video> element is used to embed movies, tutorials, or clips.
+
+Basic Example:
+<video src="movie.mp4" controls></video>
+
+Important <video> Attributes:
+
+controls → adds play, pause, volume, fullscreen, etc.
+
+<video controls src="movie.mp4"></video>
+
+
+autoplay → plays video automatically (muted required in many browsers).
+
+<video autoplay muted src="movie.mp4"></video>
+
+
+loop → restarts video after ending.
+
+<video loop controls src="movie.mp4"></video>
+
+
+muted → starts video with no sound.
+
+<video muted controls src="movie.mp4"></video>
+
+
+poster → placeholder image before play.
+
+<video controls poster="thumbnail.jpg" src="movie.mp4"></video>
+
+
+width & height → set video dimensions.
+
+<video controls width="400" height="300" src="movie.mp4"></video>
+
+Multiple Source Support:
+
+Videos also come in formats (.mp4, .webm, .ogg). Use multiple <source>:
+
+<video controls width="500">
+  <source src="movie.mp4" type="video/mp4">
+  <source src="movie.webm" type="video/webm">
+  <source src="movie.ogg" type="video/ogg">
+  <p>Your browser does not support video.</p>
+</video>
+
+🔹 3. Advanced: Customizing with JavaScript
+
+You can control audio/video with JavaScript (play, pause, volume, etc.).
+
+Example:
+<video id="myVideo" width="400" controls>
+  <source src="movie.mp4" type="video/mp4">
+</video>
+
+<button onclick="playVideo()">Play</button>
+<button onclick="pauseVideo()">Pause</button>
+
+<script>
+  let video = document.getElementById("myVideo");
+
+  function playVideo() {
+    video.play();
+  }
+
+  function pauseVideo() {
+    video.pause();
+  }
+</script>
+
+🔹 4. Supported Formats (Browser Compatibility)
+Media Type	Format	MIME Type	Supported By
+Audio	MP3 (.mp3)	audio/mpeg	Most browsers
+Audio	OGG (.ogg)	audio/ogg	Firefox, Chrome
+Audio	WAV (.wav)	audio/wav	Most browsers
+Video	MP4 (.mp4)	video/mp4	Chrome, Safari, Edge
+Video	WebM (.webm)	video/webm	Chrome, Firefox, Opera
+Video	Ogg (.ogv)	video/ogg	Firefox, Opera
+
+Form Elements
+<form action="/submit" method="POST">
+  <input type="text" name="username" placeholder="Enter your name">
+  <button type="submit">Submit</button>
+</form>
+Semantic Elements (meaningful structure)
+html
+Copy
+Edit
+<header>Website Header</header>
+<nav>Menu Links</nav>
+<main>Main Content</main>
+<footer>Footer Info</footer>
+4. Notes About HTML Elements
+✅ Case-insensitive: <P> works like <p>, but lowercase is standard
+✅ Well-formed HTML means properly nested and closed tags
+✅ HTML5 introduced semantic elements for better SEO & accessibility
+
+
+
+Introduction to HTML Attributes
+In HTML, attributes are extra information added to HTML elements to define their properties, behavior, or appearance.
+They are always written in the opening tag of an element.
+
+Example:
+
+html
+Copy
+Edit
+<a href="https://google.com" target="_blank">Visit Google</a>
+Here:
+
+href → Attribute name
+
+"https://google.com" → Attribute value
+
+target="_blank" → Another attribute for the same element
+
+1. Basic Rules for HTML Attributes
+Written in the opening tag of an element.
+
+Always in name="value" format.
+
+Multiple attributes are separated by spaces.
+
+Attribute values should be in quotes (especially if they have spaces).
+
+Case-insensitive, but lowercase is recommended for HTML5.
+
+2. Types of HTML Attributes
+A) Global Attributes
+Can be used on any HTML element.
+
+Attribute	Purpose	Example
+id	Unique identifier	<p id="intro">Welcome</p>
+class	CSS class name(s)	<div class="box red">Content</div>
+style	Inline CSS styles	<h1 style="color:blue;">Heading</h1>
+title	Tooltip text	<abbr title="HyperText Markup Language">HTML</abbr>
+hidden	Hides an element	<p hidden>This is hidden</p>
+data-*	Custom data attributes	<div data-user-id="1234">User</div>
+
+B) Element-Specific Attributes
+These work only on certain elements.
+
+1. For <a> (Anchor)
+html
+Copy
+Edit
+<a href="https://example.com" target="_blank" rel="noopener">Click Here</a>
+href → Link URL
+
+target="_blank" → Opens in a new tab
+
+rel → Relationship (security & SEO hint)
+
+2. For <img> (Images)
+html
+Copy
+Edit
+<img src="cat.jpg" alt="Cute Cat" width="200" height="150">
+src → Image source
+
+alt → Alternative text for accessibility
+
+width & height → Size of the image
+
+3. For <input> (Forms)
+html
+Copy
+Edit
+<input type="text" name="username" placeholder="Enter username" required>
+type → Input type (text, email, password, etc.)
+
+name → Field name (for form submission)
+
+placeholder → Temporary hint text
+
+required → Field must be filled before submitting
+
+4. For <video> and <audio>
+html
+Copy
+Edit
+<video src="movie.mp4" controls autoplay muted loop></video>
+controls → Show play/pause buttons
+
+autoplay → Play automatically
+
+muted → Starts without sound
+
+loop → Plays repeatedly
+
+5. For <table>
+html
+Copy
+Edit
+<table border="1">
+  <tr><th>Item</th><th>Price</th></tr>
+  <tr><td>Apple</td><td>$1</td></tr>
+</table>
+border → Table border width (deprecated, better use CSS)
+
+3. Boolean Attributes
+Some attributes don’t need a value; their presence means “true”.
+
+Examples:
+
+html
+Copy
+Edit
+<input type="checkbox" checked>
+<input type="text" disabled>
+<button hidden>Hidden Button</button>
+Here:
+
+checked → Checkbox starts checked
+
+disabled → Cannot be interacted with
+
+hidden → Not displayed
+
+4. Custom Data Attributes
+These allow you to store extra data in HTML for use with JavaScript.
+
+Example:
+<div data-user-id="42" data-role="admin">John Doe</div>
+<script>
+  let user = document.querySelector("div");
+  console.log(user.dataset.userId); // 42
+</script>
+5. Summary Table of Common Attributes
+Attribute	Description	Example
+id	Unique identifier	<div id="main">...</div>
+class	Assigns one or more CSS classes	<p class="highlight">...</p>
+style	Inline CSS styling	<h2 style="color:red;">Title</h2>
+title	Tooltip text	<abbr title="World Health Organization">WHO</abbr>
+href	Link URL	<a href="link.html">Click</a>
+src	Media source	<img src="photo.jpg">
+alt	Alternative text	<img alt="Description">
+type	Input type	<input type="password">
+placeholder	Hint text in form fields	<input placeholder="Email">
+required	Makes input mandatory	<input required>
+disabled	Disables an element	<button disabled>Click</button>
+data-*	Custom data	<div data-id="5">Item</div>
+
+
+
+Input Fields in HTML5
+
+The <input> element is one of the most important parts of HTML forms. It allows users to enter data that can be sent to a server or handled with JavaScript.
+
+In HTML5, new input types and attributes were introduced, making forms more powerful, user-friendly, and interactive.
+
+🔹 1. Basic Syntax
+<input type="text" name="username" placeholder="Enter your name">
+
+
+<input> → the element.
+
+type → defines the input field type (text, email, password, etc.).
+
+name → identifies the field when data is sent to a server.
+
+placeholder → hint text inside the input.
+
+🔹 2. Common Input Types
+
+Here are the most used ones in HTML5:
+
+📝 Text Inputs
+<input type="text" placeholder="Enter text">
+<input type="password" placeholder="Enter password">
+<input type="email" placeholder="Enter email">
+<input type="url" placeholder="Enter website URL">
+<input type="tel" placeholder="Enter phone number">
+
+🔢 Number & Range
+<input type="number" min="1" max="10" step="1">
+<input type="range" min="0" max="100" step="5">
+
+📅 Date & Time
+<input type="date">
+<input type="time">
+<input type="datetime-local">
+<input type="month">
+<input type="week">
+
+✅ Choice Inputs
+<input type="checkbox" name="subscribe"> Subscribe  
+<input type="radio" name="gender" value="male"> Male  
+<input type="radio" name="gender" value="female"> Female  
+
+📂 File Upload
+<input type="file" accept="image/*">
+
+
+accept="image/*" → restricts to images only.
+
+Can also accept multiple files:
+
+<input type="file" multiple>
+
+🎨 Color Picker
+<input type="color">
+
+🔍 Search Input
+<input type="search" placeholder="Search...">
+
+🎛 Hidden Input
+<input type="hidden" name="token" value="12345">
+
+🔹 3. Useful Attributes for <input>
+Form Control Attributes
+
+placeholder → hint text.
+
+required → makes field mandatory.
+
+<input type="email" required>
+
+
+readonly → field cannot be changed.
+
+<input type="text" value="Fixed" readonly>
+
+
+disabled → field is disabled (not sent in form).
+
+<input type="text" disabled>
+
+
+maxlength / minlength → restrict character length.
+
+<input type="text" minlength="3" maxlength="10">
+
+
+pattern → regex validation.
+
+<input type="text" pattern="[A-Za-z]{3,}">
+
+
+autofocus → auto-focus on page load.
+
+<input type="text" autofocus>
+
+
+autocomplete → browser auto-fills field (on/off).
+
+<input type="email" autocomplete="on">
+
+File & Media Attributes
+
+accept → restrict file types (image/*, .pdf, .docx).
+
+multiple → allow multiple selections.
+
+🔹 4. Grouping with <label>
+
+It’s best practice to associate inputs with <label> for accessibility.
+
+<label for="email">Email:</label>
+<input type="email" id="email" name="email">
+
+
+Clicking the label will focus the input.
+
+🔹 5. Input & Form Validation
+
+HTML5 provides built-in validation (before JavaScript).
+
+Example:
+
+<form>
+  <input type="email" required>
+  <input type="number" min="1" max="10">
+  <input type="submit">
+</form>
+
+
+If the user doesn’t enter a valid email → browser shows error automatically.
+
+No JavaScript required for basic checks.
+
+🔹 6. Example Form with Various Inputs
+<form>
+  <h2>Registration Form</h2>
+
+  <label>Full Name:</label>
+  <input type="text" name="fullname" placeholder="Enter your name" required><br><br>
+
+  <label>Email:</label>
+  <input type="email" name="email" required><br><br>
+
+  <label>Password:</label>
+  <input type="password" name="password" minlength="6" required><br><br>
+
+  <label>Gender:</label>
+  <input type="radio" name="gender" value="male"> Male
+  <input type="radio" name="gender" value="female"> Female<br><br>
+
+  <label>Upload Profile Picture:</label>
+  <input type="file" accept="image/*"><br><br>
+
+  <label>Favorite Color:</label>
+  <input type="color"><br><br>
+
+  <label>Age:</label>
+  <input type="number" min="18" max="60"><br><br>
+
+  <label>Birthday:</label>
+  <input type="date"><br><br>
+
+  <input type="submit" value="Register">
+</form>
+
+🔹 7. Advanced: Customizing Input with CSS & JS
+
+By default, inputs look different across browsers. You can style them with CSS:
+
+input[type="text"], input[type="email"], input[type="password"] {
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  width: 250px;
+}
+input:focus {
+  border-color: dodgerblue;
+  outline: none;
+}
+
+
+And add interactivity with JavaScript:
+
+document.querySelector("input[name='fullname']")
+  .addEventListener("input", function() {
+    console.log("User typing: " + this.value);
+  });
+
+✅ Summary
+
+<input> is a versatile HTML element for collecting user data.
+
+HTML5 added new types (email, date, color, range, search, etc.).
+
+Attributes like required, pattern, min, max, autocomplete, accept, etc. improve usability.
+
+Labels improve accessibility.
+
+Built-in validation reduces the need for extra JavaScript.
+
+👉 Do you want me to also make you a cheat sheet table of all HTML5 input types with short descriptions and example values (quick reference)?
+-->
+
+
+</body>
+</html>
