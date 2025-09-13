@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DiliPraise</title>
     <link rel="stylesheet" href="DiliPraise.css">
+    <link rel="stylesheet" href="./fontawesome7/css/all.css">
 </head>
 <body>
     <h1>Welcome to what we want to do...</h1>
@@ -12,5 +13,149 @@
     <p class="obi">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, vel.</p>
     <p class="adda">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur veniam facere assumenda!</p>
     
+
+    <h2>📋 To-Do List</h2>
+
+  <!-- Input field and button -->
+  <input type="text" id="taskInput" placeholder="Enter a new task">
+  <button onclick="addTask()">Add Task</button>
+
+  <!-- To-Do Table -->
+  <table>
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Task</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="taskTable"></tbody>
+  </table>
+ <script>
+    let tasks = [];
+    let count = 0;
+
+    function addTask() {
+      let taskInput = document.getElementById("taskInput");
+      let taskValue = taskInput.value.trim();
+
+      if (taskValue === "") {
+        alert("Please enter a task!");
+        return;
+      }
+
+      count++;
+      let task = { id: count, name: taskValue, done: false };
+      tasks.push(task);
+      taskInput.value = "";
+      renderTasks();
+    }
+
+    function toggleTask(id) {
+      tasks = tasks.map(task =>
+        task.id === id ? { ...task, done: !task.done } : task
+      );
+      renderTasks();
+    }
+
+    function deleteTask(id) {
+      tasks = tasks.filter(task => task.id !== id);
+      renderTasks();
+    }
+
+    function renderTasks() {
+      let taskTable = document.getElementById("taskTable");
+      taskTable.innerHTML = "";
+
+      tasks.forEach((task, index) => {
+        taskTable.innerHTML += `
+          <tr>
+            <td>${index + 1}</td>
+            <td class="${task.done ? "done" : ""}">${task.name}</td>
+            <td>${task.done ? "✅ Completed" : "⏳ Pending"}</td>
+            <td>
+              <button onclick="toggleTask(${task.id})">
+                ${task.done ? "Undo" : "Done"}
+              </button>
+              <button onclick="deleteTask(${task.id})">Delete</button>
+            </td>
+          </tr>
+        `;
+      });
+    }
+  </script>
+
+
+<form action="" method="post"> 
+    <input type="text" placeholder="Enter text">
+<input type="password" placeholder="Enter password">
+<input type="email" placeholder="Enter email">
+<input type="url" placeholder="Enter website URL">
+<input type="tel" placeholder="Enter phone number">
+
+<input type="number" min="1" max="100" step="1">
+<input type="range" min="0" max="100" step="5">
+
+<input type="date">
+<input type="time">
+<input type="datetime-local">
+<input type="month">
+<input type="week">
+
+<input type="checkbox" name="subscribe"> Subscribe  
+<input type="radio" name="gender" value="male"> Male  
+<input type="radio" name="gender" value="female"> Female  
+
+<input type="file" accept="image/*">
+
+<input type="color">
+
+<input type="search" placeholder="Search...">
+
+<input type="hidden" name="token" value="12345">
+
+<label for="email">Email:</label>
+<input type="email" id="email" name="email">
+</form>
+<br>
+
+<form>
+  <input type="email" required>
+  <input type="number" min="1" max="10">
+  <input type="submit">
+</form> <br>
+
+<form>
+  <h2>Registration Form</h2>
+
+  <label>Full Name:</label>
+  <input type="text" name="fullname" placeholder="Enter your name" required><br><br>
+
+  <label>Email:</label>
+  <input type="email" name="email" required><br><br>
+
+  <label>Password:</label>
+  <input type="password" name="password" minlength="6" required><br><br>
+
+  <label>Gender:</label>
+  <input type="radio" name="gender" value="male"> Male
+  <input type="radio" name="gender" value="female"> Female<br><br>
+
+  <label>Upload Profile Picture:</label>
+  <input type="file" accept="image/*"><br><br>
+
+  <label>Favorite Color:</label>
+  <input type="color"><br><br>
+
+  <label>Age:</label>
+  <input type="number" min="18" max="60"><br><br>
+
+  <label>Birthday:</label><i class="fa-brands fa-github"></i>
+  <input type="date"><br><br>
+
+  <input type="submit" value="Register">
+</form>
+
 </body>
 </html>
