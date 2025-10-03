@@ -74,6 +74,59 @@ header{
     object-fit: cover;
 }
 
+/* Flip Card Styles */
+.project-card{ 
+    perspective: 1000px; /* This Enables 3D Effects*/
+}
+.card-inner{ 
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.9s;
+    transform-style: preserve-3d;
+}
+
+.project-card:hover .card-inner{ 
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back{ 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hides The Back When The Front Is Visible*/
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Front Side */
+.car-front{ 
+    background: #fff;
+}
+
+/* Back Side */
+.card-back{ 
+    background: #333;
+    color: #fff;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card-back button{ 
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    background: #ff9800;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.4s ease;
+}
+
 /* Projects Section */
 .projects{ 
     padding: 3rem 2rem;
@@ -85,4 +138,51 @@ header{
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
+}
+
+.project-card{ 
+    background: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s;
+}
+.project-card:hover{ 
+    transform: translateY(-8px);
+}
+.project-card img{ 
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Contact Section */
+.contact{ 
+    padding: 3rem 2rem;
+    background-color: #fff;
+    text-align: center;
+}
+.contact a{ 
+    color: #ff9800;
+    text-decoration: none;
+}
+.contact a:hover{ 
+    text-decoration: underline;
+}
+
+/* Footer Section */
+footer{ 
+    background: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Responsiveness */
+@media screen and (min-width: 340px) and (max-width: 768px){ 
+    .about-content{ 
+        flex-direction: column;
+    }
+    .nav-links{ 
+        gap: 1rem;
+    }
 }
