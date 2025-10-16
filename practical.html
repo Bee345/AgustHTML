@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="practical.css">
 </head>
 <body>
-    <h1 class="edu">This Is A Heading</h1>
+    <!-- <h1 class="edu">This Is A Heading</h1>
     <h2 class="eu">This Is A Heading</h2>
     <h3 class="eduu">This Is A Heading</h3>
     <h3 class="eduu">This Is A Heading</h3>
@@ -129,12 +129,66 @@
             </tbody>
   </table>
 
-  <!-- <audio controls src="/Future-WORST-DAY-(TopGhanaMusic.Com).mp3"></audio> -->
+  <audio controls src="/Future-WORST-DAY-(TopGhanaMusic.Com).mp3"></audio> -->
 
-  <audio controls> 
+  <!-- <audio controls> 
     <source src="/Future-WORST-DAY-(TopGhanaMusic.Com).mp3" type="audio/mpeg">
     <source src="/10-Future-WE-JUS-WANNA-GET-HIGH-(JustNaija.com).mp3" type="audio/mpeg">
-  </audio>
+  </audio>  -->
     <!-- <img src="Estate3.jpeg" alt="An image" width="100%" height="40vh"> -->
+
+    <h1>Practical Ways To Use JavaScript</h1>
+    <button onclick="alert('Hey Dear It Nice To Meet U!')">Click Me</button>
+
+    <h2 id="demo">Hello!</h2>
+<button onclick="changeText()">Click me</button>
+
+<script>
+function changeText() {
+  document.getElementById("demo").innerText = "Welcome to JavaScript!";
+}
+</script>
+
+<script>
+  document.write("<h2>Hello, World!</h2>");
+  document.write("The sum of 5 + 10 = " + (5 + 10));
+</script>
+
+<!-- <script>
+  let name = "BiiZIi";
+  console.log("Hello " + name);
+  console.log("The square of 6 is " + (6 * 6));
+</script> -->
+
+<!-- <script>
+  let answer = confirm("Do you want to continue?");
+  if (answer) {
+    document.write("You clicked OK!");
+  } else {
+    document.write("You clicked Cancel!");
+  }
+</script> -->
+
+<!-- <script>
+  let name = prompt("What is your name?");
+  document.write("<br> Hello " + name + "!");
+</script> -->
+
+<script>
+  let users = [
+    {name: "BiiZIi", age: 20},
+    {name: "John", age: 25}
+  ];
+  console.table(users);
+</script>
+
+<div class="parents"></div>
+<script>
+  let parentDiv = document.querySelector(".parents");
+  let para = document.createElement("p");
+  para.style.backgroundColor = "lightblue";
+  para.textContent = "This text was added using JavaScript!";
+  parentDiv.appendChild(para);
+</script>
 </body>
 </html>
