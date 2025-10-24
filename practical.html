@@ -139,7 +139,8 @@
 
     <h1>Practical Ways To Use JavaScript</h1>
     <button onclick="alert('Hey Dear It Nice To Meet U!')">Click Me</button>
-
+  
+    <p id="result"></p>
     <h2 id="demo">Hello!</h2>
 <button onclick="changeText()">Click me</button>
 
@@ -154,11 +155,11 @@ function changeText() {
   document.write("The sum of 5 + 10 = " + (5 + 10));
 </script>
 
-<!-- <script>
+<script>
   let name = "BiiZIi";
   console.log("Hello " + name);
   console.log("The square of 6 is " + (6 * 6));
-</script> -->
+</script>
 
 <!-- <script>
   let answer = confirm("Do you want to continue?");
@@ -170,16 +171,21 @@ function changeText() {
 </script> -->
 
 <!-- <script>
-  let name = prompt("What is your name?");
-  document.write("<br> Hello " + name + "!");
+  let naame = prompt("What is your name?");
+  document.write("<br> Hello " + naame + "!");
 </script> -->
 
 <script>
   let users = [
-    {name: "BiiZIi", age: 20},
-    {name: "John", age: 25}
+    {name: "BiiZIi", age: 20, school: "GTC AWKA", Hobby: "Video Games"},
+    {name: "John", age: 25, school: "GTC AWKA", Hobby: "Video Games"}
   ];
   console.table(users);
+</script>
+
+<script>
+  let namee = "JavaScript";
+  document.getElementById("result").innerHTML += "<h3>Welcome to " + namee + "!" + "</h3";
 </script>
 
 <div class="parents"></div>
@@ -190,5 +196,12 @@ function changeText() {
   para.textContent = "This text was added using JavaScript!";
   parentDiv.appendChild(para);
 </script>
+
+<div class="allSec" id="">
+  <label for="ageLimit">Age Limit:</label>
+  <p id="show"></p>
+  <p id="still"></p>
+</div>
+<script src="practical.js"></script>
 </body>
 </html>
