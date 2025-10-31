@@ -1567,5 +1567,254 @@ If you insert untrusted input into the page using innerHTML, it can expose your 
 let p = document.createElement("p");
 p.textContent = userInput;  // Prevents HTML injection
 document.body.appendChild(p); -->
+
+
+<!-- JAVASCRIPT OPERATORS -->
+ <!-- What Are Operators in JavaScript?
+
+In JavaScript, operators are special symbols or keywords that tell the interpreter to perform specific operations on values (operands).
+These operations can include arithmetic (e.g. +, -), comparison (e.g. ==, >), logic (e.g. &&, ||), assignment (e.g. =), and much more.
+
+For example:
+
+let x = 10 + 5; // '+' is an arithmetic operator that adds 10 and 5
+
+
+Here:
+
+10 and 5 are operands
+
++ is the operator
+
+⚙️ Types of JavaScript Operators
+
+JavaScript operators can be broadly grouped into categories:
+
+Arithmetic Operators
+
+Assignment Operators
+
+Comparison (Relational) Operators
+
+Logical Operators
+
+Bitwise Operators
+
+String Operators
+
+Ternary (Conditional) Operator
+
+Type Operators
+
+Spread and Rest Operators
+
+Nullish Coalescing Operator
+
+Let’s break them down one by one 👇
+
+🧮 1. Arithmetic Operators
+
+Used to perform mathematical calculations between numbers.
+
+Operator	Description	Example	Result
++	Addition	5 + 3	8
+-	Subtraction	5 - 3	2
+*	Multiplication	5 * 3	15
+/	Division	10 / 2	5
+%	Modulus (remainder)	10 % 3	1
+**	Exponentiation	2 ** 3	8
+++	Increment	x++	Increases x by 1
+--	Decrement	x--	Decreases x by 1
+
+🔹 Example:
+
+let a = 5;
+let b = 2;
+console.log(a + b); // 7
+console.log(a ** b); // 25
+console.log(a % b); // 1
+
+🧾 2. Assignment Operators
+
+Used to assign values to variables.
+
+Operator	Example	Same As
+=	x = 10	x = 10
++=	x += 5	x = x + 5
+-=	x -= 3	x = x - 3
+*=	x *= 2	x = x * 2
+/=	x /= 2	x = x / 2
+%=	x %= 2	x = x % 2
+**=	x **= 3	x = x ** 3
+
+🔹 Example:
+
+let x = 10;
+x += 5; // x = 15
+x *= 2; // x = 30
+
+⚖️ 3. Comparison (Relational) Operators
+
+Used to compare values and return a Boolean (true or false).
+
+Operator	Description	Example	Result
+==	Equal to (loose equality, type conversion allowed)	5 == '5'	true
+===	Strictly equal (no type conversion)	5 === '5'	false
+!=	Not equal	5 != 4	true
+!==	Strictly not equal	5 !== '5'	true
+>	Greater than	8 > 4	true
+<	Less than	3 < 5	true
+>=	Greater than or equal to	5 >= 5	true
+<=	Less than or equal to	3 <= 2	false
+
+🔹 Example:
+
+console.log(5 == "5");   // true
+console.log(5 === "5");  // false
+console.log(10 >= 8);    // true
+
+🔍 4. Logical Operators
+
+Used to combine multiple conditions and return Boolean results.
+
+Operator	Description	Example	Result
+&&	AND	(5 > 3 && 8 > 6)	true
+`		`	OR ||
+!	NOT	!(5 > 3)	false;
+
+🔹 Example:
+
+let age = 20;
+if (age > 18 && age < 30) {
+  console.log("Eligible");
+}
+
+⚙️ 5. Bitwise Operators
+
+Work on the binary representation of numbers.
+
+Operator	Description	Example
+&	AND	5 & 1 → 0101 & 0001 = 0001 (1)
+`	`	OR |
+^	XOR	5 ^ 1 → 0100 (4)
+~	NOT	~5 → -6
+<<	Left shift	5 << 1 → 10
+>>	Right shift	5 >> 1 → 2
+
+🧵 6. String Operators
+
+The + operator can also concatenate (join) strings.
+
+Operator	Description	Example	Result
++	Concatenation	'Hello' + ' World'	'Hello World'
++=	Append	text += '!'	Appends '!' to text
+
+🔹 Example:
+
+let first = "Java";
+let second = "Script";
+console.log(first + second); // "JavaScript"
+
+❔ 7. Ternary (Conditional) Operator
+
+A shortcut for if-else statements.
+Syntax:
+
+condition ? expressionIfTrue : expressionIfFalse
+
+
+🔹 Example:
+
+let age = 18;
+let status = (age >= 18) ? "Adult" : "Minor";
+console.log(status); // "Adult"
+
+🧩 8. Type Operators
+
+Used to check or manipulate data types.
+
+Operator	Description	Example	Result
+typeof	Returns the type of a variable	typeof 42	"number"
+instanceof	Checks if an object is an instance of a class	arr instanceof Array	true
+
+🔹 Example:
+
+let name = "John";
+console.log(typeof name); // "string"
+
+let arr = [1,2,3];
+console.log(arr instanceof Array); // true
+
+🌀 9. Spread (...) and Rest (...) Operators
+
+Both use ... but serve different purposes.
+
+Spread expands elements (used in arrays or objects)
+
+Rest collects multiple elements into one variable
+
+🔹 Spread Example:
+
+let arr1 = [1, 2];
+let arr2 = [...arr1, 3, 4]; // [1, 2, 3, 4]
+
+
+🔹 Rest Example:
+
+function sum(...numbers) {
+  return numbers.reduce((a, b) => a + b);
+}
+console.log(sum(1, 2, 3)); // 6
+
+🧱 10. Nullish Coalescing Operator (??)
+
+Returns the right-hand operand when the left-hand operand is null or undefined.
+
+🔹 Example:
+
+let user;
+console.log(user ?? "Guest"); // "Guest"
+
+
+This is safer than using ||, which also treats 0 or "" as false.
+
+🧭 Operator Precedence and Associativity
+
+Operator precedence determines the order of evaluation.
+
+Example:
+
+let x = 10 + 5 * 2; 
+console.log(x); // 20 (not 30)
+
+
+Because * has higher precedence than +.
+
+Associativity determines how operators of the same precedence are processed:
+
+Most arithmetic and assignment operators are left-to-right
+
+Assignment (=) and exponentiation (**) are right-to-left
+
+🧮 Example Combining Operators
+let a = 10;
+let b = 5;
+let c = a > b && a !== 0 ? a + b : a - b;
+console.log(c); // 15
+
+✅ Conclusion
+
+JavaScript operators are the building blocks of logic and computation in your code.
+They allow you to:
+
+Perform arithmetic and logical operations
+
+Compare values
+
+Assign and manipulate variables
+
+Work efficiently with strings, objects, and arrays
+
+Mastering operators means mastering how your code thinks and evaluates expressions. -->
 </body>
 </html>

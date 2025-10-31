@@ -151,3 +151,14 @@ let userInput = `Chinedu Nwankwo`;
 let p = document.createElement("p");
 p.textContent = userInput;  // Prevents HTML injection
 document.querySelector(".allSec").appendChild(p);
+let th = !(10 > 5);
+console.log(th);
+
+
+let ps = 12 + 5 * 2; 
+console.log(ps);
+
+let a = 0;
+let b = 5;
+let c = a > b && a !== 0 ? a + b : a - b;
+console.log(c);
