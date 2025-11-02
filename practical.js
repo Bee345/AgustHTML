@@ -162,3 +162,7 @@ let a = 0;
 let b = 5;
 let c = a > b && a !== 0 ? a + b : a - b;
 console.log(c);
+
+
+
+
