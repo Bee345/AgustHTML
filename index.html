@@ -193,6 +193,7 @@ html
 Copy
 Edit
 <p>This is a <strong>bold</p></strong>
+
 7. Comments in HTML
 Comments are ignored by the browser but useful for notes.
 
@@ -200,7 +201,189 @@ Comments are ignored by the browser but useful for notes.
  This is a comment 
 <p>This will be displayed.</p>
 
+ An HTML element is the building block of any webpage.
+It defines the structure and content that browsers render on the screen.
+
+Every HTML element usually consists of:
+
+<opening-tag>Content</closing-tag>
+
+
+Example:
+
+<p>Hello, World!</p>
+
+
+Here:
+
+<p> → Opening tag
+
+Hello, World! → Content
+
+</p> → Closing tag
+
+Together, they form an HTML element.
+
+🧩 Types of HTML Elements
+
+HTML elements are broadly divided into two main types based on how they behave in the document flow:
+
+Block-level elements
+
+Inline elements
+
+Let’s go deeper into each.
+
+🧱 1. Block-Level Elements
+📖 Definition
+
+A block-level element always starts on a new line and takes up the full width available (by default).
+It stretches from the left to the right edge of its parent container.
+
+🧠 Characteristics
+
+Always begins on a new line
+
+Occupies 100% of the available width
+
+Can contain other block or inline elements
+
+Browser automatically adds line breaks before and after it
+
+🧩 Common Block-Level Elements
+Element	Description
+<div>	A generic container for grouping content
+<p>	Paragraph of text
+<h1>–<h6>	Headings (h1 is the largest, h6 the smallest)
+<header>	Represents the header section of a page or section
+<footer>	Represents the footer section
+<section>	Defines a section in a document
+<article>	Represents an independent piece of content
+<nav>	Navigation links section
+<main>	The main content area of the document
+<aside>	Sidebar content related to the main content
+<ul>, <ol>, <li>	Lists and list items
+<table>, <tr>, <td>	Table and its rows/cells
+<form>	Form container
+<blockquote>	For long quotations
+🧰 Example
+<div>
+  <h1>Welcome to My Website</h1>
+  <p>This is a block-level paragraph element.</p>
+</div>
+
+
+Output behavior:
+
+Each element appears on a new line.
+
+The <div> and <p> take up full width of the page by default.
+
+
+✏️ 2. Inline Elements
+📖 Definition
+
+An inline element does not start on a new line.
+It only takes up as much width as its content needs.
+
+🧠 Characteristics
+
+Does not start a new line
+
+Occupies only the space required by the content
+
+Cannot contain block-level elements
+
+Usually used to format text or add small elements within a line of text
+
+🧩 Common Inline Elements
+Element	Description
+<span>	Generic inline container (for styling text)
+<a>	Creates a hyperlink
+<img>	Embeds an image
+<strong>	Emphasizes strong importance (bold text)
+<em>	Emphasizes text (italic)
+<b>	Bold text (without extra meaning)
+<i>	Italic text (without extra meaning)
+<u>	Underlined text
+<small>	Makes text smaller
+<mark>	Highlights text
+<br>	Line break
+<sub>	Subscript text
+<sup>	Superscript text
+<input>	Input field inside forms
+<label>	Caption for an input element
+<code>	Displays code text inline
+🧰 Example
+<p>
+  This is an <strong>inline</strong> element inside a paragraph.
+  Here is a <a href="#">link</a> and an <img src="image.jpg" alt="image">.
+</p>
+
+
+Output behavior:
+
+All elements appear on the same line as part of the text flow.
+
+Only break to a new line if the container width runs out.
+
+⚖️ Block vs Inline Elements Summary
+Feature	Block-level Elements	Inline Elements
+Starts on new line	✅ Yes	❌ No
+Takes full width	✅ Yes	❌ No
+Can contain block elements	✅ Yes	❌ No
+Can contain inline elements	✅ Yes	✅ Yes
+Example	<div>, <p>, <section>	<span>, <a>, <img>
+🧩 Inline-Block Elements (Hybrid Type)
+
+There’s also a third type called inline-block elements, which combine features of both.
+
+📖 Definition
+
+An inline-block element behaves like inline (does not start a new line) but acts like block in that it can have width, height, and padding.
+
+🧰 Example
+<style>
+  .box {
+    display: inline-block;
+    width: 120px;
+    height: 80px;
+    background-color: lightblue;
+    margin: 5px;
+  }
+</style>
+
+<div class="box">Box 1</div>
+<div class="box">Box 2</div>
+<div class="box">Box 3</div>
+
+
+Output behavior:
+
+Boxes sit side-by-side like inline elements
+
+Each one still respects width and height like block elements
+
+⚙️ Changing Display Type with CSS
+
+You can change how any element behaves using the CSS display property:
+
+p {
+  display: inline;
+}
+
+span {
+  display: block;
+}
+
+img {
+  display: inline-block;
+}
+
+
+This gives developers flexibility to redefine layout behavior.
 8. Text Formatting Tags
+
 Tag	Effect	Example
 <b>	Bold (not semantic)	<b>Bold Text</b>
 <strong>	Bold (important)	<strong>Important</strong>
@@ -1171,6 +1354,7 @@ Built-in validation reduces the need for extra JavaScript.
 
 <!-- HTML SPECIAL CHARACTERS -->
 <p>Special characters in HTML are reserved characters that have a specific meaning in HTML syntax. To display these characters as part of your content, you need to use character entities (also known as HTML entities).</p>
+
 
 </body>
 </html>

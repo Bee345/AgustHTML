@@ -164,5 +164,118 @@ let c = a > b && a !== 0 ? a + b : a - b;
 console.log(c);
 
 
+let cage = 17;
 
+if (cage >= 18) {
+  console.log("You are eligible to vote.");
+} 
+
+let temperature = 5;
+
+if (temperature > 30) {
+  console.log("It's hot outside.");
+} else {
+  console.log("It's not too hot today.");
+}
+
+let score = 85;
+if (score >= 90) {
+  console.log("Grade: A");
+} else if (score >= 80) {
+  console.log("Grade: B");
+} else if (score >= 70) {
+  console.log("Grade: C");
+} else {
+  console.log("Grade: F");
+}
+
+
+let sage = 16;
+let hasLicense = true;
+if (sage >= 18 && hasLicense) {
+  console.log("You can drive!");
+} else {
+  console.log("You are not allowed to drive.");
+}
+
+
+let userName = "FlapDeJong";
+let password = "123456"
+if (userName === "BiiZii") {
+  if (password === "123456") {
+    console.log(`Welcome ${userName} Login successful!`);
+  } else {
+    console.log("Incorrect password.");
+  }
+} else {
+  console.log("Username not found.");
+}
+
+let numString = "22445";
+let num = Number(numString);
+
+
+console.log(num);           
+console.log(typeof numString);
+
+let buu = 2;
+let checkers = Boolean(1.00);
+console.log( checkers);
+
+// if ("Hello") {
+//   console.log("This runs!");  
+// } else{ 
+//   console.log("This Doesn't Run!");
+// }
+
+// if (1) {
+//   console.log("This will NOT run.");
+// } else {
+//   console.log("0 is falsy!");
+// }
+
+let rr = 50;
+let tt = "50";
+
+if (rr === tt) {
+  console.log("Well They are 2 diffrient Things");
+} else{ 
+  console.log("Still Looking em Up");
+}
+
+const select = document.getElementById("ages");
+
+for (let age = 18; age <= 55; age++) {
+  let options = document.createElement("option");
+  options.value = age;
+  options.textContent = age;
+  
+  select.appendChild(options);
+}
+
+
+// Function Expression
+const time = function time(){ 
+    const now = new Date();
+}
+
+// Arrow Function
+const addArrow = (a, b) => a + b;
+console.log(addArrow(3, 4));
+
+function add(a, b) {
+  // console.log(a + b);
+  return a + b;
+}
+
+console.log(add(5, 3));
+
+
+let matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+
+console.log(matrix[0,2][1,0]);
 

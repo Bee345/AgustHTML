@@ -1816,5 +1816,852 @@ Assign and manipulate variables
 Work efficiently with strings, objects, and arrays
 
 Mastering operators means mastering how your code thinks and evaluates expressions. -->
+
+<!-- If Statement & If Else Statement -->
+ <!-- Introduction
+
+In JavaScript, decision-making is done using conditional statements.
+They allow your program to choose different actions depending on whether a condition is true or false.
+
+The most common conditional statements are:
+
+if statement
+
+if...else statement
+
+if...else if...else chain
+
+switch statement (optional alternative)
+
+🟩 1. The if Statement
+🔹 Purpose:
+
+The if statement is used to execute a block of code only when a given condition is true.
+
+🧩 Syntax:
+if (condition) {
+  // code to be executed if condition is true
+}
+
+🧠 Explanation:
+
+The condition inside the parentheses ( ) is evaluated.
+
+If the condition evaluates to true, the block { } executes.
+
+If the condition is false, JavaScript skips the block.
+
+✅ Example:
+let age = 18;
+
+if (age >= 18) {
+  console.log("You are eligible to vote.");
+}
+
+
+Output:
+
+You are eligible to vote.
+
+
+If age was less than 18, nothing would happen.
+
+🟨 2. The if...else Statement
+🔹 Purpose:
+
+When you want two possible outcomes — one for true and one for false.
+
+🧩 Syntax:
+if (condition) {
+  // executes if condition is true
+} else {
+  // executes if condition is false
+}
+
+✅ Example:
+let temperature = 25;
+
+if (temperature > 30) {
+  console.log("It's hot outside.");
+} else {
+  console.log("It's not too hot today.");
+}
+
+
+Output:
+
+It's not too hot today.
+
+
+Here, since 25 is not greater than 30, the else block runs.
+
+🟦 3. The if...else if...else Ladder
+🔹 Purpose:
+
+Used when you need to check multiple conditions in sequence.
+
+🧩 Syntax:
+if (condition1) {
+  // executes if condition1 is true
+} else if (condition2) {
+  // executes if condition2 is true
+} else {
+  // executes if all conditions are false
+}
+
+✅ Example:
+let score = 85;
+
+if (score >= 90) {
+  console.log("Grade: A");
+} else if (score >= 80) {
+  console.log("Grade: B");
+} else if (score >= 70) {
+  console.log("Grade: C");
+} else {
+  console.log("Grade: F");
+}
+
+
+Output:
+
+Grade: B
+
+
+The conditions are checked in order — once one condition is true, the rest are ignored.
+
+🟧 4. Comparison and Logical Operators
+
+Conditional statements rely heavily on comparison operators and logical operators.
+
+🔸 Comparison Operators
+Operator	Description	Example	Result
+==	Equal to (loose)	5 == "5"	true
+===	Equal value & type (strict)	5 === "5"	false
+!=	Not equal (loose)	5 != "5"	false
+!==	Not equal (strict)	5 !== "5"	true
+>	Greater than	8 > 5	true
+<	Less than	3 < 5	true
+>=	Greater than or equal to	10 >= 10	true
+<=	Less than or equal to	7 <= 9	true
+🔸 Logical Operators
+Operator	Meaning	Example	Result
+&&	Logical AND	age > 18 && age < 60	true only if both conditions are true
+`		`	Logical OR
+!	Logical NOT	!(5 > 10)	true if condition is false
+✅ Example Combining Comparison & Logical Operators
+let age = 25;
+let hasLicense = true;
+
+if (age >= 18 && hasLicense) {
+  console.log("You can drive!");
+} else {
+  console.log("You are not allowed to drive.");
+}
+
+
+Output:
+
+You can drive!
+
+
+Both conditions are true, so the if block executes.
+
+🧩 5. Nested if Statements
+
+You can place an if inside another if to check multiple levels of conditions.
+
+✅ Example:
+let username = "BiiZii";
+let password = "12345";
+
+if (username === "BiiZii") {
+  if (password === "12345") {
+    console.log("Login successful!");
+  } else {
+    console.log("Incorrect password.");
+  }
+} else {
+  console.log("Username not found.");
+}
+
+🧮 6. If Statement Conclusion (Summary)
+Concept	Description	Example
+if	Checks a single condition	if (x > 0)
+if...else	Provides an alternative block	if (x > 0) {...} else {...}
+else if	Tests multiple conditions in sequence	if (x > 0) {...} else if (x == 0) {...}
+Nested if	One condition inside another	if (x > 0) { if (y > 0) {...} }
+Comparison	Compares values	==, ===, >, <, etc.
+Logical	Combines multiple conditions	&&, `
+💡 Real-World Example
+let time = 14; // 2PM
+
+if (time < 12) {
+  console.log("Good morning!");
+} else if (time < 18) {
+  console.log("Good afternoon!");
+} else {
+  console.log("Good evening!");
+}
+
+
+Output:
+
+Good afternoon!
+
+🧠 Key Takeaways
+
+Use === and !== for strict comparison (best practice).
+
+Conditions evaluate to boolean values — true or false.
+
+You can combine multiple conditions using logical operators.
+
+Once one if or else if condition is true, the rest are skipped.
+
+Always use braces {} for clarity, even for one-line statements. -->
+
+<!-- Type Conversion Coercion -->
+<!-- Elaborate Note on Type Conversion and Type Coercion in JavaScript
+🪄 1. What Is Type Conversion?
+🔹 Definition:
+
+Type Conversion is the process of explicitly converting a value from one data type to another using built-in JavaScript functions or methods.
+
+That means you (the developer) intentionally convert the type.
+
+🔸 Example:
+let numString = "123";
+let num = Number(numString); // Explicitly convert string to number
+
+console.log(num);           // 123
+console.log(typeof num);    // number
+
+
+Here, we used the Number() function to manually convert "123" (string) → 123 (number).
+
+🧩 Common Type Conversion Functions
+Function	Converts To	Example	Result
+Number(value)	Number	Number("25")	25
+String(value)	String	String(10)	"10"
+Boolean(value)	Boolean	Boolean(1)	true
+parseInt(value)	Integer	parseInt("45.9")	45
+parseFloat(value)	Floating number	parseFloat("45.9")	45.9
+✅ Example:
+let x = "10";
+let y = "20";
+
+let sum1 = x + y;                // String concatenation -> "1020"
+let sum2 = Number(x) + Number(y); // Numeric addition -> 30
+
+console.log(sum1); // "1020"
+console.log(sum2); // 30
+
+
+This shows the difference between explicit conversion and automatic coercion (we’ll explain coercion next 👇).
+
+⚙️ 2. What Is Type Coercion?
+🔹 Definition:
+
+Type Coercion is the process where JavaScript automatically converts one data type to another behind the scenes (implicitly), usually when performing operations involving different types.
+
+You didn’t tell it to happen — JavaScript did it automatically.
+
+🔸 Example:
+let x = "5";
+let y = 10;
+
+let result = x + y;
+console.log(result);        // "510"  (number coerced to string)
+console.log(typeof result); // "string"
+
+
+🧩 Here, JavaScript coerced 10 (number) into "10" (string), because the + operator with a string triggers string concatenation.
+
+🧠 Why Does Coercion Happen?
+
+JavaScript tries to make sense of mixed data types by converting them automatically based on context (like mathematical or logical operations).
+
+⚖️ 3. Implicit Type Coercion Examples
+🟨 a) String Coercion
+
+Occurs when using the + operator with a string.
+
+console.log("The answer is " + 42);     // "The answer is 42"
+console.log(42 + " is the answer");     // "42 is the answer"
+
+
+The + operator prefers string concatenation when one operand is a string.
+
+🟩 b) Number Coercion
+
+Occurs when using arithmetic operators other than +.
+
+console.log("6" - 2);    // 4  -> "6" coerced to number
+console.log("6" * "2");  // 12 -> both strings coerced to numbers
+console.log("10" / "2"); // 5
+
+
+But note:
+
+console.log("6" + 2); // "62"  -> concatenation, not math
+
+🟦 c) Boolean Coercion
+
+Occurs in conditional statements (if, while, for, etc.)
+
+JavaScript automatically converts values to true or false.
+
+Truthy values → evaluate to true
+
+Everything except the few falsy values below.
+
+Falsy values → evaluate to false
+Falsy Value	Description
+false	Boolean false
+0	Number zero
+-0	Negative zero
+""	Empty string
+null	Null value
+undefined	Undefined value
+NaN	Not a Number
+✅ Example:
+if (!"") {
+  console.log("This runs!");  // true, non-empty string is truthy
+}
+
+if (0) {
+  console.log("This will NOT run.");
+} else {
+  console.log("0 is falsy!");
+}
+
+
+Output:
+
+This runs!
+0 is falsy!
+
+🧮 4. Type Coercion in Comparisons
+
+When using loose equality (==), JavaScript performs type coercion before comparing values.
+
+Example:
+console.log(5 == "5");   // true  -> "5" coerced to number
+console.log(0 == false); // true  -> false coerced to 0
+console.log(null == undefined); // true  -> special rule
+
+
+But with strict equality (===), JavaScript does not coerce types.
+
+console.log(5 === "5");   // false (different types)
+console.log(0 === false); // false
+console.log(null === undefined); // false
+
+
+✅ Rule of thumb:
+
+Always use === and !== to avoid unexpected coercion.
+
+⚔️ 5. Examples: Conversion vs Coercion Side by Side
+Expression	Conversion Type	Result	Explanation
+Number("10")	Explicit	10	Developer converts manually
+"5" + 1	Implicit (coercion)	"51"	Number → string
+"5" - 1	Implicit (coercion)	4	String → number
+true + true	Implicit	2	true → 1
+false == 0	Implicit	true	false → 0
+false === 0	None (strict)	false	No coercion
+Boolean("hello")	Explicit	true	Non-empty string is truthy
+🧩 6. How to Avoid Type Coercion Bugs
+
+✅ Use strict equality === and !==
+
+✅ Explicitly convert values (Number(), String(), Boolean())
+
+✅ Use parseInt() or parseFloat() for numeric string conversions
+
+⚠️ Be cautious when using the + operator — it can concatenate strings unexpectedly.
+
+🧠 7. Quick Summary Table
+Concept	Type	Description	Example
+Type Conversion	Explicit	Manually changing data type	Number("123")
+Type Coercion	Implicit	JavaScript automatically converts type	"5" - 2 → 3
+String Coercion	Implicit	Happens with + and a string	"5" + 2 → "52"
+Number Coercion	Implicit	Happens with arithmetic ops	"5" * 2 → 10
+Boolean Coercion	Implicit	Happens in conditionals	if (value)
+💡 8. Real-World Example
+let input = prompt("Enter a number:"); // Always returns string
+
+// Coercion:
+console.log(input + 10); // concatenates: "5" + 10 = "510"
+
+// Conversion:
+console.log(Number(input) + 10); // converts to number: 5 + 10 = 15
+
+
+This shows the importance of understanding the difference — coercion can lead to unexpected results if not handled correctly.
+
+🧾 Conclusion
+Concept	Summary
+Type Conversion	You intentionally change a value’s data type using built-in functions.
+Type Coercion	JavaScript automatically converts data types to complete an operation.
+Safe Practice	Always prefer explicit type conversion and strict equality (===) to avoid hidden bugs. -->
+
+
+
+<!-- JAVASCRIPT FUNCTIONS -->
+ <!-- 1. What is a Function in JavaScript?
+
+A function in JavaScript is a reusable block of code designed to perform a particular task. It allows you to organize your code into logical sections and avoid repetition.
+
+Functions help make programs:
+
+Modular (divided into smaller parts)
+
+Readable
+
+Reusable
+
+Maintainable
+
+🏗️ 2. Basic Syntax of a Function
+
+A typical JavaScript function has:
+
+The keyword function
+
+A name (optional in some cases)
+
+Parentheses () that may contain parameters
+
+Curly braces {} that enclose the body of the function
+
+function greet(name) {
+  console.log("Hello, " + name + "!");
+}
+
+
+To call (or invoke) the function:
+
+greet("BiiZIi"); // Output: Hello, BiiZIi!
+
+⚙️ 3. Function Components Explained
+Component	Description	Example
+Name	Identifier used to call the function	greet
+Parameters	Input values for the function	(name)
+Body	Code block defining what the function does	{ console.log(...) }
+Return value	The output that the function produces using the return keyword	return name + "!"
+
+Example with return:
+
+function add(a, b) {
+  return a + b;
+}
+
+let sum = add(5, 3); // sum = 8
+
+📘 4. Function Declaration (a.k.a. Function Statement)
+🧩 Definition:
+
+A function declaration defines a function using the function keyword followed by a name.
+
+🧠 Syntax:
+function functionName(parameters) {
+  // code block
+  return value;
+}
+
+🧮 Example:
+function multiply(x, y) {
+  return x * y;
+}
+
+console.log(multiply(4, 5)); // 20
+
+✅ Key Features:
+
+Hoisted — function declarations are hoisted to the top of their scope, meaning they can be called before they are defined in code.
+
+sayHi(); // Works!
+
+function sayHi() {
+  console.log("Hi there!");
+}
+
+
+Named functions — always have a name.
+
+Ideal for global or reusable functions.
+
+💡 5. Function Expression
+🧩 Definition:
+
+A function expression involves creating a function and assigning it to a variable.
+Unlike declarations, expressions are not hoisted.
+
+🧠 Syntax:
+const functionName = function(parameters) {
+  // code
+  return value;
+};
+
+🧮 Example:
+const divide = function(a, b) {
+  return a / b;
+};
+
+console.log(divide(10, 2)); // 5
+
+⚠️ Important:
+
+You cannot call a function expression before it’s defined.
+
+subtract(10, 5); // ❌ Error: Cannot access 'subtract' before initialization
+
+const subtract = function(a, b) {
+  return a - b;
+};
+
+✅ Key Features:
+
+Not hoisted — can only be called after they are defined.
+
+Can be anonymous (no name after function keyword).
+
+Useful for callbacks or when you want to limit function scope.
+
+🆚 6. Function Declaration vs Function Expression
+Feature	Function Declaration	Function Expression
+Hoisting	Hoisted (can be used before definition)	Not hoisted
+Syntax	function name() {}	const name = function() {}
+Name	Always has a name	Can be anonymous
+When to Use	When you need reusable named functions	When you need functions as values or callbacks
+Example Use Case	Utility functions	Event handlers, timers, or array methods
+🧩 7. Anonymous Functions
+
+A function without a name — often used inside higher-order functions like map(), filter(), forEach().
+
+let numbers = [1, 2, 3, 4];
+
+let doubled = numbers.map(function(num) {
+  return num * 2;
+});
+
+console.log(doubled); // [2, 4, 6, 8]
+
+⚡ 8. Arrow Functions (ES6+ Shortcut)
+
+Introduced in ES6, arrow functions provide a shorter syntax for function expressions.
+
+// Regular function expression
+const add = function(a, b) {
+  return a + b;
+};
+
+// Arrow function
+const addArrow = (a, b) => a + b;
+
+console.log(addArrow(3, 4)); // 7
+
+Differences:
+
+Arrow functions don’t have their own this.
+
+More concise for callbacks and inline functions.
+
+🧭 9. Functions as First-Class Citizens
+
+In JavaScript:
+
+Functions can be stored in variables
+
+Passed as arguments to other functions
+
+Returned from other functions
+
+This makes JavaScript a functional programming language at its core.
+
+Example:
+function greetUser(greetFn) {
+  greetFn();
+}
+
+function sayHello() {
+  console.log("Hello there!");
+}
+
+greetUser(sayHello); // Output: Hello there!
+ -->
+
+
+ <!-- JAVASCRIPT FUNCTIONS & ARRAYS -->
+  <!-- 1. FUNCTIONS IN JAVASCRIPT
+
+A function is a block of code designed to perform a specific task.
+It helps make code reusable, organized, and modular.
+
+You create a function once and call (or invoke) it whenever you need it.
+
+🏗️ A. Function Declaration Syntax
+function functionName(parameters) {
+  // code to execute
+  return value; // optional
+}
+
+
+Example:
+
+function greet(name) {
+  console.log("Hello, " + name + "!");
+}
+
+🚀 2. CALLING FUNCTIONS IN JAVASCRIPT
+🧩 A. What Does “Calling a Function” Mean?
+
+Calling (or invoking) a function means executing the code inside the function.
+You do this by writing the function’s name followed by parentheses ().
+
+Example:
+
+function greet() {
+  console.log("Welcome to JavaScript!");
+}
+
+greet();  // Function call
+
+🧩 B. Calling Functions with Arguments
+
+If a function expects parameters, pass them inside the parentheses.
+
+Example:
+
+function add(a, b) {
+  console.log(a + b);
+}
+
+add(5, 3); // Output: 8
+
+
+Here:
+
+add → function name
+
+5, 3 → arguments
+
+The function prints 8
+
+🧩 C. Function Returning a Value
+
+Instead of printing directly, you can return a value.
+
+function multiply(x, y) {
+  return x * y;
+}
+
+let result = multiply(4, 5);  // stores 20 in result
+console.log(result);          // Output: 20
+
+
+The return statement sends data back to where the function was called.
+
+🧩 D. Function Call Sequence
+
+Functions can call other functions inside them.
+
+Example:
+
+function greetUser(name) {
+  return "Hello, " + name;
+}
+
+function displayMessage() {
+  let message = greetUser("BiiZIi");
+  console.log(message);
+}
+
+displayMessage();  // Output: Hello, BiiZIi
+
+
+This is called nested function calls — one function calling another.
+
+🧩 E. Calling Functions Automatically (IIFE)
+
+An Immediately Invoked Function Expression (IIFE) runs automatically after it is defined.
+
+(function() {
+  console.log("I run automatically!");
+})();
+
+🧩 F. Calling Functions as Event Handlers
+
+You can call functions in response to events, e.g., button clicks.
+
+<button onclick="sayHi()">Click Me</button>
+
+<script>
+function sayHi() {
+  alert("Hello there!");
+}
+</script>
+
+🧩 G. Calling Functions with Default Parameters
+
+Functions can have default parameter values if no argument is provided.
+
+function greet(name = "Guest") {
+  console.log("Welcome, " + name + "!");
+}
+
+greet("BiiZIi"); // Welcome, BiiZIi!
+greet();         // Welcome, Guest!
+
+📘 3. ARRAYS IN JAVASCRIPT
+
+An Array is a special variable that can hold multiple values at once.
+
+Instead of creating many variables:
+
+let student1 = "John";
+let student2 = "Mary";
+let student3 = "Paul";
+
+
+You can create an array:
+
+let students = ["John", "Mary", "Paul"];
+
+🧩 A. Creating Arrays
+
+There are two common ways:
+
+1️⃣ Using Array Literals (recommended)
+let colors = ["Red", "Green", "Blue"];
+
+2️⃣ Using the Array() Constructor
+let colors = new Array("Red", "Green", "Blue");
+
+
+✅ Array literals are preferred — shorter and cleaner.
+
+🧮 B. Accessing Array Elements
+
+Each element has an index number starting from 0.
+
+let fruits = ["Apple", "Banana", "Mango"];
+
+console.log(fruits[0]); // Apple
+console.log(fruits[2]); // Mango
+
+🔁 C. Changing Array Elements
+
+You can change an element using its index:
+
+let fruits = ["Apple", "Banana", "Mango"];
+fruits[1] = "Orange";
+
+console.log(fruits); // ["Apple", "Orange", "Mango"]
+
+➕ D. Adding New Elements
+
+Add to the end:
+
+fruits.push("Pineapple");
+
+
+Add to the beginning:
+
+fruits.unshift("Grapes");
+
+➖ E. Removing Elements
+
+Remove the last element:
+
+fruits.pop(); // removes "Pineapple"
+
+
+Remove the first element:
+
+fruits.shift(); // removes "Grapes"
+
+🔎 F. Array Length
+
+The .length property gives the number of items.
+
+console.log(fruits.length);
+
+🧭 G. Looping Through Arrays
+Using for loop:
+let colors = ["Red", "Green", "Blue"];
+
+for (let i = 0; i < colors.length; i++) {
+  console.log(colors[i]);
+}
+
+Using forEach() method:
+colors.forEach(function(color) {
+  console.log(color);
+});
+
+
+Or arrow function:
+
+colors.forEach(color => console.log(color));
+
+🧠 H. Common Array Methods
+Method	Description	Example
+push()	Add to end	arr.push("Dog")
+pop()	Remove last item	arr.pop()
+shift()	Remove first item	arr.shift()
+unshift()	Add to start	arr.unshift("Cat")
+slice()	Copy part of array	arr.slice(1,3)
+splice()	Add/remove items at index	arr.splice(2, 1, "New")
+concat()	Join arrays	arr1.concat(arr2)
+indexOf()	Find item index	arr.indexOf("Cat")
+includes()	Check if exists	arr.includes("Cat")
+reverse()	Reverse order	arr.reverse()
+sort()	Sort items	arr.sort()
+join()	Convert to string	arr.join(", ")
+
+⚙️ I. Multidimensional Arrays
+
+Arrays can contain other arrays.
+
+let matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+
+console.log(matrix[1][2]); // Output: 6
+
+🧩 J. Array with Different Data Types
+
+Arrays in JavaScript can hold mixed data types:
+
+let random = ["Hello", 42, true, { name: "BiiZIi" }];
+
+🧾 4. FUNCTIONS AND ARRAYS TOGETHER
+
+You can pass arrays into functions and even return arrays.
+
+Example:
+
+function getEvenNumbers(numbers) {
+  return numbers.filter(num => num % 2 === 0);
+}
+
+let nums = [1, 2, 3, 4, 5, 6];
+let evens = getEvenNumbers(nums);
+
+console.log(evens); // [2, 4, 6]
+
+🧩 5. Summary
+Concept	Key Points
+Function Calling	Executes code in a defined function using its name followed by ()
+Return Keyword	Sends data back from the function
+IIFE	Runs automatically when defined
+Arrays	Store multiple values in a single variable
+Array Methods	Provide powerful tools to manipulate lists easily
+Looping Arrays	for, forEach, map, and others help process array elements -->
 </body>
 </html>
