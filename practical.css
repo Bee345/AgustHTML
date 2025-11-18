@@ -12,3 +12,48 @@ table, th, td{
     border-collapse: collapse;
     padding: 10px;
 }
+/* This Below here is where i styled my Bulb Project */
+.bulbCont{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #111827;
+    font-family: sans-serif;
+}
+.container{ 
+    text-align: center;
+}
+#bulb{ 
+    width: 250px;
+    display: block;
+    margin: 0 auto 30px;
+}
+
+/* Button Styling */
+.toggle{ 
+    width: 120px;
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 35px;
+    cursor: pointer;
+    background: #e5e7eb;
+    color: #111;
+    position: relative;
+    transition: all 0.45s ease;
+}
+
+/* When OFF -> moves slightly to right */
+.toggle .off{ 
+    transform: translateX(6px);
+    background: #e5e;
+    color: #111;
+}
+/* When ON -> moves slightly to left */
+.toggle .on{ 
+    transform: translateX(-6px);
+    background: #e5e;
+    color: white;
+
+}

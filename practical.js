@@ -118,10 +118,10 @@ console.log(summary);
 
 // document.body.innerHTML = "<h1>Welcome to My Website</h1><p>This text is added using JavaScript.</p>";
 
-let newDiv = document.createElement("div");
-newDiv.innerHTML = "<h3>Dynamic Section</h3><p>Created using createElement()</p>";
+// let newDiv = document.createElement("div");
+// newDiv.innerHTML = "<h3>Dynamic Section</h3><p>Created using createElement()</p>";
 
-document.body.appendChild(newDiv);
+// document.body.appendChild(newDiv);
 
 
 
@@ -279,3 +279,25 @@ let matrix = [
 
 console.log(matrix[0,2][1,0]);
 
+
+// Well This Below Is where i made the code for the bulb project
+const bulb = document.getElementById("bulb");
+const toggleBtn = document.getElementById("toggleBtn");
+
+let isOn = false;
+
+toggleBtn.addEventListener("click", () => { 
+  isOn = !isOn; //for the toggle state
+
+  if(isOn){ 
+    bulb.src = "./Idea-Bulb-On22.png";
+    toggleBtn.textContent = "ON";
+    toggleBtn.classList.remove("off");
+    toggleBtn.classList.add("on");
+  } else{ 
+    bulb.src = "./Idea-Bulb-Off2.png";
+    toggleBtn.textContent = "OFF";
+    toggleBtn.classList.remove("on");
+    toggleBtn.classList.add("off");
+  }
+})
