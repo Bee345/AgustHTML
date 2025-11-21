@@ -280,24 +280,51 @@ let matrix = [
 console.log(matrix[0,2][1,0]);
 
 
-// Well This Below Is where i made the code for the bulb project
+// // Well This Below Is where i made the code for the bulb project
+// const bulb = document.getElementById("bulb");
+// const toggleBtn = document.getElementById("toggleBtn");
+
+// let isOn = false;
+
+// toggleBtn.addEventListener("click", () => { 
+//   isOn = !isOn; //for the toggle state
+
+//   if(isOn){ 
+//     bulb.src = "./Idea-Bulb-On22.png";
+//     toggleBtn.textContent = "ON";
+//     toggleBtn.classList.remove("off");
+//     toggleBtn.classList.add("on");
+//   } else{ 
+//     bulb.src = "./Idea-Bulb-Off2.png";
+//     toggleBtn.textContent = "OFF";
+//     toggleBtn.classList.remove("on");
+//     toggleBtn.classList.add("off");
+//   }
+// })
+
+
+// This is another style for the same bulb project.
 const bulb = document.getElementById("bulb");
+const glow = document.querySelector(".bulbGlow");
+const label = document.querySelector(".label");
 const toggleBtn = document.getElementById("toggleBtn");
+
 
 let isOn = false;
 
 toggleBtn.addEventListener("click", () => { 
   isOn = !isOn; //for the toggle state
-
   if(isOn){ 
     bulb.src = "./Idea-Bulb-On22.png";
-    toggleBtn.textContent = "ON";
+    glow.style.opacity = "1";
     toggleBtn.classList.remove("off");
     toggleBtn.classList.add("on");
+    label.textContent = "ON";
   } else{ 
     bulb.src = "./Idea-Bulb-Off2.png";
-    toggleBtn.textContent = "OFF";
+    glow.style.opacity = "0";
     toggleBtn.classList.remove("on");
     toggleBtn.classList.add("off");
+    label.textContent = "OFF";
   }
 })

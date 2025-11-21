@@ -1,0 +1,127 @@
+/* CSS Variables (Light Mode) */
+:root{ 
+    --bg: #ffff54;
+    --panel: #7a7adf;
+    --text: #111827;
+    --muted: #6b7280;
+    --accent: #2563eb;
+    --shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+    --glass: rgba(255, 255, 255, 0.6);
+}
+
+/* Dark Theme */
+:root[data-theme="dark"]{ 
+    --bg: #0b1220;
+    --panel: #355b98;
+    --text: #e6eef8;
+    --muted: #a0c1ef;
+    --accent: #60a5fa;
+    --shadow: 0 6px 18px rgba(2, 6, 23, 0.7);
+    --glass: rgba(255, 255, 255, 0.6);
+}
+
+/* Respect POS prefrences */
+@media(prefers-color-scheme: dark){ 
+    :root:not([data-theme]){ 
+    --bg: #0b1220;
+    --panel: #122540;
+    --text: #e6eef8;
+    --muted: #94a3b8;
+    --accent: #60a5fa;
+    --shadow: 0 6px 18px rgba(135, 150, 218, 0.7);
+    --glass: rgba(255, 255, 255, 0.04);
+}
+}
+
+/* Basic page Styling */
+html,body{ 
+    height: 100%;
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: var(--bg);
+    color: var(--text);
+    transition: background 240ms ease, color 240ms ease;
+}
+
+.container{ 
+    max-width: 920px;
+    margin: 48px auto;
+    padding: 24px;
+    border: 4px solid #525e97;
+    background: var(--panel);
+    border-radius: 24px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    transition: box-shadow 240ms ease, background 240ms ease;
+}
+
+
+h1{ 
+    margin: 0 0 6px 0;
+    font-size: 1.5re6;
+}
+
+p.lead{ 
+    margin-top: 0;
+    color: var(--muted);
+}
+
+/* Toggle Button */
+.theme-toggle{ 
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: var(--glass);
+    cursor: pointer;
+    transition: transform 160ms ease, background 160ms ease;
+}
+.theme-toggle:active{transform: scale(0.99);}
+
+/* Simple Icon Circles */
+.toggle-icon{ 
+    width: 30px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 999px;
+    background: var(--accent);
+    box-shadow: 0 2px 6px rgba(111, 214, 14, 0.28);
+}
+
+/* Content Card */
+.card{ 
+    margin-top: 18px;
+    padding: 16px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text);
+    transition: background 240ms ease;
+}
+
+/* Dark-Mode Image Adjustments */
+img.theme-aware{ 
+    transition: filter 240ms ease;
+}
+:root[data-theme="dark"] img.theme-aware{ 
+    filter:brightness(0.95) contrast(1.02);
+}
+
+/* Utility classes */
+.light{color-scheme: light;}
+.dark{ color-scheme: dark;}
+
+/* I just gave the sub-container and the image some unique styling */
+.subContainer{ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.theme-aware{ 
+    width: 100%;
+    border-radius: 18px;
+    margin: 20px auto;
+}
