@@ -2663,5 +2663,786 @@ IIFE	Runs automatically when defined
 Arrays	Store multiple values in a single variable
 Array Methods	Provide powerful tools to manipulate lists easily
 Looping Arrays	for, forEach, map, and others help process array elements -->
+
+
+<!-- JAVASCRIPT FUNCTION & IN-BUILT FUNCTIONS -->
+ <!-- Elaborate Note on JavaScript Functions
+
+JavaScript functions are one of the most important building blocks of the language. A function allows you to group a set of instructions together and run them whenever you want—just by calling the function’s name. Functions help you write cleaner code, reduce repetition, and make your program easier to understand.
+
+1. What is a Function?
+
+A function is a reusable block of code designed to perform a specific task.
+
+Example:
+function greet() {
+  console.log("Hello!");
+}
+
+
+Here:
+
+function is the keyword
+
+greet is the function name
+
+{...} contains the code the function will run
+
+You can execute (call) this function by writing:
+
+greet();
+
+2. Why Functions Are Important
+✔ Reusability
+
+Write code once and use it many times.
+
+✔ Better organization
+
+Break big tasks into small units.
+
+✔ Avoid repetition
+
+If you need to perform the same action repeatedly, use a function.
+
+✔ Easier debugging
+
+Fixing inside one function fixes everywhere it’s used.
+
+3. Types of Functions in JavaScript
+
+JavaScript has several ways to create functions:
+
+A. Function Declaration (Named Function)
+
+This is the most common type.
+
+function add(a, b) {
+  return a + b;
+}
+
+
+Features:
+
+Has a name (add)
+
+Hoisted (you can call it before definition)
+
+Example:
+console.log(add(2, 3)); // 5
+
+B. Function Expression
+
+You assign a function to a variable.
+
+const multiply = function (x, y) {
+  return x * y;
+};
+
+
+Features:
+
+Can be named or anonymous
+
+Not hoisted like declarations
+
+Often used for callbacks
+
+C. Arrow Function (ES6+)
+
+A shorter syntax for writing functions.
+
+const divide = (a, b) => a / b;
+
+
+Features:
+
+Cleaner and shorter
+
+Does not have its own this keyword
+
+Perfect for simple callbacks
+
+Example:
+setTimeout(() => console.log("Done!"), 1000);
+
+D. Anonymous Functions
+
+Functions without names, often used in callbacks.
+
+button.addEventListener("click", function () {
+  console.log("Clicked!");
+});
+
+E. Immediately Invoked Function Expression (IIFE)
+
+A function that runs immediately after it's created.
+
+(function () {
+  console.log("I ran immediately!");
+})();
+
+
+Used to:
+
+Avoid polluting the global scope
+
+Create a private scope
+
+4. Function Parameters and Arguments
+Parameters
+
+Names listed in the function definition.
+
+function greet(name) {
+  console.log("Hello " + name);
+}
+
+
+name is a parameter.
+
+Arguments
+
+Values passed to the function when calling it.
+
+greet("BiiZIi");
+
+
+"BiiZIi" is an argument.
+
+Default Parameters
+
+Set a default value if no argument is provided.
+
+function greet(name = "Guest") {
+  console.log("Hello " + name);
+}
+
+5. Return Statement
+
+A function can output a value using return.
+
+function sum(a, b) {
+  return a + b;
+}
+
+
+Anything after return does not run.
+
+6. Scope in Functions
+
+Scope determines where variables can be accessed.
+
+A. Local Scope
+
+Variables declared inside a function.
+
+function test() {
+  let x = 10; // local
+}
+
+B. Global Scope
+
+Variables declared outside any function.
+
+C. Block Scope (let, const)
+
+Variables declared inside {} cannot escape.
+
+7. Callback Functions
+
+A function passed into another function.
+
+function processData(callback) {
+  callback();
+}
+
+processData(() => console.log("Processing done!"));
+
+
+Used for:
+
+Event handling
+
+Asynchronous operations
+
+Array methods (map, filter, reduce)
+
+8. Higher-Order Functions
+
+Functions that take other functions as arguments or return functions.
+
+Example:
+
+function makeMultiplier(x) {
+  return function (y) {
+    return x * y;
+  };
+}
+
+const double = makeMultiplier(2);
+console.log(double(5)); // 10
+
+9. Pure vs Impure Functions
+Pure Function
+
+Same input → same output
+
+No side effects
+
+function square(x) {
+  return x * x;
+}
+
+Impure Function
+
+Modifies external data or depends on it
+
+let counter = 0;
+function increase() {
+  counter++;
+}
+
+10. Functions Inside Objects (Methods)
+
+When a function is stored inside an object, it’s called a method.
+
+const person = {
+  name: "John",
+  greet() {
+    console.log("Hello " + this.name);
+  }
+};
+
+11. Functions Are First-Class Citizens
+
+In JavaScript:
+
+Functions can be stored in variables
+
+Functions can be returned from other functions
+
+Functions can be passed as arguments
+
+This makes JavaScript very powerful.
+
+12. Recursion
+
+A function calling itself.
+
+function countdown(n) {
+  if (n <= 0) return;
+  console.log(n);
+  countdown(n - 1);
+}
+
+
+Used for:
+
+Tree structures
+
+Searching algorithms
+
+Repeating tasks -->
+<!-- Now About All In built Functions In JavaScript -->
+ <!-- Note: JavaScript (ECMAScript) evolves; browser/node support differs for some recent additions (e.g., Array.prototype.toSorted, structuredClone, Object.hasOwn). If you want a printable PDF or an alphabetized cheat-sheet, I can make that next.
+
+1. GLOBAL (TOP-LEVEL) FUNCTIONS / PROPERTIES
+
+These are available in the global scope.
+
+eval(code)
+Executes a string of JavaScript code in the current scope.
+Use: rarely — dynamic code loading, debugging.
+Caveat: big security and performance risks. Avoid.
+
+const x = 2;
+eval("console.log(x + 3)"); // 5
+
+
+isFinite(value) / Number.isFinite(value)
+Tests if a value is a finite number. isFinite coerces non-numbers; Number.isFinite is stricter.
+
+isFinite("10")        // true (coerced)
+Number.isFinite("10")// false
+
+
+isNaN(value) / Number.isNaN(value)
+isNaN coerces — dangerous. Number.isNaN only true for actual NaN.
+
+isNaN("foo")         // true  (coerced as NaN)
+Number.isNaN("foo")  // false
+Number.isNaN(NaN)    // true
+
+
+parseInt(string, [radix]) / parseFloat(string)
+Convert strings to numbers. parseInt("10", 2) parses binary. parseFloat reads decimals. Trim whitespace; stop at first non-numeric char.
+
+parseInt("101", 2) // 5
+parseFloat("3.14px") // 3.14
+
+
+encodeURI, encodeURIComponent, decodeURI, decodeURIComponent
+URL encoding utilities. Use encodeURIComponent for query values.
+
+escape() / unescape() — deprecated, avoid. Use encodeURIComponent.
+
+globalThis (property) — the global object (works in browser, node, web workers).
+
+2. CORE CONSTRUCTORS & PROTOTYPE/STATIC METHODS
+
+These are built-in constructors that also expose many static methods and prototype methods.
+
+Function-related
+
+Function (constructor) — creates functions dynamically (new Function('a','b','return a+b')) — like eval use with caution.
+
+Function.prototype.call(thisArg, ...args), apply(thisArg, argsArray), bind(thisArg, ...args) — control this and call behavior.
+
+function add(a,b){ return this.base + a + b; }
+add.call({base:1},2,3) // 6
+
+Object
+
+Object (static)
+
+Object.create(proto, props) — create object with given prototype.
+
+Object.assign(target, ...sources) — shallow copy enumerable props.
+
+Object.keys(obj) / Object.values(obj) / Object.entries(obj) — enumerables.
+
+Object.fromEntries(iterable) — reverse of entries.
+
+Object.freeze, Object.seal, Object.preventExtensions — immutability controls.
+
+Object.getOwnPropertyDescriptor, Object.defineProperty, Object.defineProperties — descriptor API.
+
+Object.getPrototypeOf, Object.setPrototypeOf.
+
+Object.hasOwn(obj, prop) — modern helper (safer than obj.hasOwnProperty.call).
+
+Example:
+
+const o = Object.create(null);
+Object.defineProperty(o, 'x', { value: 1, enumerable: true });
+
+Function.prototype (already mentioned): call, apply, bind.
+Boolean / Number / String / BigInt / Symbol
+
+Boolean, Number, String are constructors and have prototype methods:
+
+Number.isInteger, Number.isSafeInteger, Number.isFinite, Number.parseInt/parseFloat.
+
+Number.prototype.toFixed, toPrecision, toExponential.
+
+BigInt — big integers: 123n literal, constructor BigInt('9007199254740993').
+
+Symbol — create unique tokens: Symbol('desc'), Symbol.iterator, Symbol.toStringTag, etc.
+
+Date
+
+Date() constructor + prototype methods:
+
+Getters: getFullYear, getMonth, getDate, getHours, getMinutes, getSeconds, getMilliseconds, and UTC variants (getUTCFullYear, ...).
+
+Setters: setFullYear, setMonth, setDate, setHours, ... and UTC variants.
+
+Conversion: toISOString(), toUTCString(), toDateString(), toTimeString(), toJSON().
+
+Date.now() (static) returns epoch ms.
+
+Example:
+
+const d = new Date();
+d.toISOString(); // '2025-11-26T...Z'
+
+RegExp
+
+RegExp constructor and RegExp.prototype:
+
+test(str) — boolean match.
+
+exec(str) — detailed match with capture groups.
+
+String methods that integrate RegExp: match, matchAll, search, replace, replaceAll, split.
+
+Error
+
+Error, TypeError, ReferenceError, RangeError, SyntaxError, URIError, AggregateError — constructors for throwing/catching errors.
+
+Error.prototype.toString(); Node/V8 has Error.captureStackTrace.
+
+3. NUMBER & MATH
+Number (static helpers)
+
+Number.isNaN() / isNaN() discussed above.
+
+Number.isInteger, Number.isSafeInteger — check integerness and safe range (Number.MAX_SAFE_INTEGER).
+
+Number.parseInt, Number.parseFloat — aliases to globals.
+
+Math (all important methods)
+
+Basic: Math.abs, Math.sign, Math.max, Math.min, Math.trunc, Math.floor, Math.ceil, Math.round, Math.fround.
+
+Power/roots: Math.pow, Math.sqrt, Math.cbrt, Math.hypot.
+
+Exponential/Log: Math.exp, Math.expm1, Math.log, Math.log1p, Math.log10, Math.log2.
+
+Trigonometry: Math.sin, Math.cos, Math.tan, plus inverses asin, acos, atan, atan2.
+
+Hyperbolic: sinh, cosh, tanh, and inverses.
+
+Random: Math.random() — uniform [0,1). Use seeded libraries for reproducible randomness.
+
+Use cases: geometry, physics, rounding, numeric algorithms.
+
+Example:
+
+Math.hypot(3,4) // 5
+
+4. STRING (prototype methods)
+
+Strings are immutable — methods return new strings.
+
+Character / code access
+
+charAt(index), charCodeAt(index), codePointAt(index).
+
+Search
+
+indexOf(substr, from), lastIndexOf, search (with regex), includes, startsWith, endsWith.
+
+Extraction
+
+slice(start, end), substring(start, end), substr(start, length) (deprecated).
+
+Modification / normalization
+
+replace(searchValue, replaceValue) — string or regex.
+
+replaceAll(search, replace) — not supported in older engines.
+
+toUpperCase, toLowerCase, repeat(n), trim, trimStart / trimEnd, padStart, padEnd, concat, normalize.
+
+Conversion
+
+split(separator, limit), valueOf, toString.
+
+Example:
+
+const url = 'https://example.com?q=search';
+const q = new URL(url).searchParams.get('q'); // use URL API instead of manual parsing
+
+
+Caveats: Unicode and surrogate pairs — use codePointAt, Array.from(str) to handle full code points. normalize() to normalize Unicode forms.
+
+5. ARRAY (prototype methods & static)
+
+Arrays are central and have many methods.
+
+Mutation (mutating)
+
+push(...items) — append
+
+pop() — remove last
+
+shift() — remove first
+
+unshift(...items) — add to start
+
+splice(start, deleteCount, ...items) — insert/remove
+
+fill(value, start, end) — fill range
+
+copyWithin(target, start, end) — copy inside array
+
+reverse(), sort(compareFn)
+
+Non-mutating / iteration / query
+
+forEach(fn) — run side effects
+
+map(fn) — transform (returns array)
+
+filter(fn) — select subset
+
+reduce(fn, initial) / reduceRight
+
+every(fn) / some(fn) — predicates
+
+find(fn) / findIndex(fn) — first match
+
+includes(value, fromIndex) — existence
+
+indexOf, lastIndexOf
+
+Combination & flattening
+
+concat(...arraysOrValues)
+
+join(separator)
+
+flat(depth) / flatMap(fn)
+
+New ES2023 non-mutating variants
+
+toSorted(), toReversed(), toSpliced() — return modified copies rather than mutating original.
+
+with(index, value) — new non-mutating index replacement.
+
+Iterators & conversion
+
+Array.from(iterable) — convert from iterables/array-like
+
+Array.isArray(obj)
+
+arr.values(), arr.keys(), arr.entries(), arr[Symbol.iterator]()
+
+Examples:
+
+[1,2,3].map(x => x*2) // [2,4,6]
+[1,2,3].reduce((a,b)=>a+b, 0) // 6
+
+
+Caveats: sort() mutates and sorts lexicographically by default; provide compare function for numeric sorts.
+
+6. MAP / SET / WEAKMAP / WEAKSET
+Map
+
+Constructor: new Map(iterable)
+
+Methods: set(key,value), get(key), has(key), delete(key), clear(), keys(), values(), entries(), forEach(fn).
+
+Use: keyed collections where keys can be objects.
+
+Set
+
+new Set(iterable)
+
+Methods: add(value), has(value), delete(value), clear(), values(), entries().
+
+Use: unique collections, dedup arrays.
+
+WeakMap / WeakSet
+
+Keys (WeakMap) must be objects; entries are weakly held (garbage collected). No iterators, no size. Use for caches keyed by objects where you don’t want to prevent GC.
+
+7. PROMISES & ASYNC
+Promise static and instance
+
+new Promise((resolve, reject) => { ... })
+
+Instance: .then(onFulfilled, onRejected), .catch(onRejected), .finally(onFinally)
+
+Static helpers: Promise.resolve(value), Promise.reject(error), Promise.all(iterable), Promise.allSettled(iterable), Promise.race(iterable), Promise.any(iterable).
+
+Example:
+
+fetch(url) // returns a Promise
+  .then(res => res.json())
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+
+
+Use cases: async network I/O, concurrency control.
+
+8. CONSOLE (dev tools helpers)
+
+console.log, console.error, console.warn, console.info, console.table, console.count, console.countReset, console.group, console.groupEnd, console.time, console.timeEnd, console.assert.
+
+Dev helpers — not for production logic.
+
+9. JSON
+
+JSON.parse(jsonString, [reviver]) — parse JSON to object. reviver for custom transformations.
+
+JSON.stringify(value, [replacer], [space]) — serialize; space prettifies.
+
+Caveat: circular references throw; functions and undefined are dropped or transformed.
+
+10. REFLECT & PROXY (meta-programming)
+Reflect
+
+A set of static methods that mirror internal object operations:
+Reflect.get, Reflect.set, Reflect.has, Reflect.ownKeys, Reflect.apply, Reflect.construct, Reflect.defineProperty, Reflect.deleteProperty, Reflect.getPrototypeOf, Reflect.setPrototypeOf, Reflect.isExtensible, Reflect.preventExtensions, Reflect.getOwnPropertyDescriptor, Reflect.ownKeys, etc.
+
+Use: when implementing Proxy handlers or meta operations.
+
+Proxy
+
+Create a proxy wrapper to intercept fundamental operations:
+
+const p = new Proxy(target, {
+  get(target, prop, receiver) { /* trap */ },
+  set(target, prop, value, receiver) { /* trap */ },
+  apply(target, thisArg, argList) { /* trap for function calls */ },
+  construct(target, args, newTarget) { /* trap for new */ },
+  // other traps: defineProperty, deleteProperty, ownKeys, getOwnPropertyDescriptor, has, etc.
+});
+
+
+Use: validation, reactive frameworks, virtualization, access control.
+
+11. REGEXP
+
+RegExp constructor: new RegExp('pattern', 'gimu').
+
+RegExp.prototype.test(str) returns boolean, exec returns match object.
+
+String methods: match, matchAll, replace, replaceAll, search, split.
+
+Example:
+
+const rx = /\b(\w+)\b/g;
+[...'hello world'.matchAll(rx)]
+
+12. INTERNATIONALIZATION (Intl)
+
+Intl.NumberFormat, Intl.DateTimeFormat, Intl.Collator, Intl.PluralRules, Intl.ListFormat.
+
+Methods: format(value), formatToParts(), resolvedOptions().
+
+Use: locale-aware formatting of numbers/dates/collation.
+
+13. TYPED ARRAYS & ARRAYBUFFER (binary data)
+
+Constructors: ArrayBuffer, SharedArrayBuffer (special), DataView, and typed arrays like Int8Array, Uint8Array, Uint8ClampedArray, Int16Array, Uint16Array, Int32Array, Uint32Array, Float32Array, Float64Array, BigInt64Array, BigUint64Array.
+
+new ArrayBuffer(bytes) — raw memory buffer.
+
+new Uint8Array(buffer, byteOffset, length) — view typed array.
+
+DataView gives low-level access with endianness control.
+
+Use: binary protocols, WebGL, file I/O, performance numeric code.
+
+14. ATOMICS & SHARED MEMORY (in worker contexts)
+
+Atomics.load, Atomics.store, Atomics.add, Atomics.sub, Atomics.wait, Atomics.notify, etc. Use only with SharedArrayBuffer in multithreaded worker scenarios.
+
+15. STRUCTURED CLONE & SERIALIZATION
+
+structuredClone(value) (modern) — deep clone of structured data (objects, arrays, Maps, Sets, ArrayBuffers, Date, RegExp, Blobs, FileList, etc.), preserving shared references where allowed. Safer than JSON for complex data.
+
+16. URL & URLSearchParams (Web platform helpers)
+
+new URL(input, [base]) — parse/manipulate URLs; .searchParams is an instance of URLSearchParams with .get, .set, .append, .delete, .toString().
+
+Use: parsing and building query strings in web apps.
+
+17. GLOBAL ENVIRONMENT / HOST API (Web & Node specifics)
+
+While not strictly ECMAScript, common global host APIs include fetch, WebSocket, localStorage (browser), process, require, fs (Node). Use environment docs for specifics.
+
+18. COLLECTION & ITERATION HELPERS
+
+Iterators: many built-ins expose iterators via [Symbol.iterator](); for...of consumes iterables.
+
+Map.prototype[@@iterator] returns entries by default.
+
+Array.from, Array.of.
+
+19. SYMBOLS (well-known symbols)
+
+Symbol.iterator, Symbol.asyncIterator, Symbol.toPrimitive, Symbol.toStringTag, Symbol.hasInstance, Symbol.isConcatSpreadable, Symbol.match, Symbol.replace, etc. These customize built-in protocol behavior (iteration, concatenation, matching, string conversion, etc.)
+
+Example: implement custom iterable:
+
+const obj = {
+  [Symbol.iterator]() { let i=0; return { next(){ return i<3 ? {value:i++, done:false} : {done:true} } } }
+};
+for (const x of obj) console.log(x); // 0 1 2
+
+20. TYPICAL PATTERNS, BEST PRACTICES & CAVEATS
+
+Prefer built-in modern methods: Array.from, Object.fromEntries, URL & URLSearchParams, fetch.
+
+Avoid eval and new Function unless necessary. Security risk.
+
+Prefer Number.isNaN/Number.isFinite over global coercing versions.
+
+Use const/let not var.
+
+Beware this: arrow functions don’t have their own this.
+
+Mutating vs non-mutating: know which array methods mutate (push, sort, splice) and which return new arrays (map, filter, slice). Use non-mutating APIs when immutability is needed.
+
+Unicode issues: string length and indexing may not reflect characters for surrogate pairs—use Array.from or codePoint aware methods.
+
+Floating point: use Number.EPSILON or toFixed when comparing floats.
+
+Performance: prefer typed arrays for numeric heavy work; Map can be faster than plain object when keys are not strings.
+
+Error handling: always handle promise rejections and use try/catch with async/await.
+
+21. EXAMPLES — common real-world snippets
+
+Debounce (using setTimeout)
+
+function debounce(fn, wait=200){
+  let t;
+  return function(...args){
+    clearTimeout(t);
+    t = setTimeout(()=> fn.apply(this, args), wait);
+  }
+}
+
+
+Deep clone with structuredClone
+
+const copy = structuredClone(original);
+
+
+Flatten array once
+
+const flat = arr.flat(); // depth = 1 default
+
+
+Get query param
+
+const url = new URL(location.href);
+const param = url.searchParams.get('page');
+
+
+Promise.allSettled example
+
+const results = await Promise.allSettled([p1, p2, p3]);
+results.forEach(r => r.status==='fulfilled' ? handle(r.value) : handleError(r.reason));
+
+22. RECENT / ES2020+ ADDITIONS WORTH KNOWING
+
+BigInt for large integers (123n).
+
+globalThis standardized global object.
+
+Promise.allSettled, Promise.any.
+
+Nullish coalescing ?? and optional chaining ?. (syntax aids).
+
+structuredClone (modern deep clone).
+
+Object.hasOwn (convenience).
+
+Array non-mutating versions: toSorted, toReversed, toSpliced, with.
+
+23. FULL ALPHABETIZED LIST? (If you want it)
+
+I covered the full families and the most important methods for each family. If you need a literal alphabetical list of every single function name in ECMAScript spec (including every prototype, every well-known symbol, every minor helper), I can generate that as a downloadable file (PDF/MD/CSV). That would be very long but I can produce it on demand.
+
+24. TL;DR / CHEAT SHEET (super short)
+
+Use Array methods for list transformations (map, filter, reduce).
+
+Use Object methods to inspect/shape objects (keys, entries, assign, fromEntries).
+
+Use Map/Set for keyed and unique collections.
+
+Use Promise / async/await for async code.
+
+Use Intl, URL, URLSearchParams, structuredClone for practical tasks.
+
+Avoid eval, prefer encodeURIComponent over escape, prefer Number.isNaN over isNaN. -->
 </body>
 </html>
